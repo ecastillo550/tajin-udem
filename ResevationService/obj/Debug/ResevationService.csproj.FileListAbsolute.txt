@@ -1,0 +1,9 @@
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\obj\Debug\ResevationService.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\bin\ResevationService.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\bin\ResevationService.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\bin\ReservationModel.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\bin\EntityFramework.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\bin\ReservationModel.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\bin\EntityFramework.xml
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\obj\Debug\ResevationService.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ResevationService\obj\Debug\ResevationService.pdb

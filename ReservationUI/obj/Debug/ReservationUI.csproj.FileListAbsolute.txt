@@ -1,0 +1,9 @@
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\bin\ReservationUI.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\bin\ReservationUI.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\obj\Debug\ReservationUI.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\obj\Debug\ReservationUI.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\bin\ReservationModel.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\bin\EntityFramework.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\bin\ReservationModel.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\bin\EntityFramework.xml
+C:\Users\Daniel\Documents\Multicapas\Reservation\ReservationUI\obj\Debug\ReservationUI.csprojResolveAssemblyReference.cache

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ReservationModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ReservationModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3382/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Business" nillable="true" type="tns:Business" />
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="Direction" nillable="true" type="tns:Direction" />
+      <xs:element minOccurs="0" name="directionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="Business">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="tns:ArrayOfMessage" />
+      <xs:element minOccurs="0" name="Reservation" nillable="true" type="tns:ArrayOfReservation" />
+      <xs:element minOccurs="0" name="Style" nillable="true" type="tns:Style" />
+      <xs:element minOccurs="0" name="bussinesName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numSpaces" type="xs:int" />
+      <xs:element minOccurs="0" name="priceRangeId" type="xs:int" />
+      <xs:element minOccurs="0" name="syleId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Business" nillable="true" type="tns:Business" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Business" nillable="true" type="tns:Business" />
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="bUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="cUserId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="mDay" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="mTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="messageId" type="xs:int" />
+      <xs:element minOccurs="0" name="messageText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="Client">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="tns:ArrayOfMessage" />
+      <xs:element minOccurs="0" name="Reservation" nillable="true" type="tns:ArrayOfReservation" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+  <xs:complexType name="ArrayOfReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reservation" nillable="true" type="tns:Reservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservation" nillable="true" type="tns:ArrayOfReservation" />
+  <xs:complexType name="Reservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Business" nillable="true" type="tns:Business" />
+      <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="bUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="cUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="people" type="xs:int" />
+      <xs:element minOccurs="0" name="rDay" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="rTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="reservationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reservation" nillable="true" type="tns:Reservation" />
+  <xs:complexType name="Style">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Business" nillable="true" type="tns:ArrayOfBusiness" />
+      <xs:element minOccurs="0" name="style1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="styleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Style" nillable="true" type="tns:Style" />
+  <xs:complexType name="ArrayOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Business" nillable="true" type="tns:Business" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusiness" nillable="true" type="tns:ArrayOfBusiness" />
+  <xs:complexType name="Direction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:ArrayOfAccount" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colony" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="directionId" type="xs:int" />
+      <xs:element minOccurs="0" name="number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postalCod" type="xs:int" />
+      <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Direction" nillable="true" type="tns:Direction" />
+  <xs:complexType name="ArrayOfAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Account" nillable="true" type="tns:Account" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccount" nillable="true" type="tns:ArrayOfAccount" />
+</xs:schema>
