@@ -18,9 +18,7 @@ namespace ReservationModel
         public string userName { get; set; }
         public int userTypeId { get; set; }
         public int userId { get; set; }
-        public Nullable<int> directionId { get; set; }
     
-        public virtual Direction Direction { get; set; }
         public virtual Business Business { get; set; }
         public virtual Client Client { get; set; }
     }

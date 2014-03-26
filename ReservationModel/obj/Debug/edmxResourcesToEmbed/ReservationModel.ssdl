@@ -9,12 +9,12 @@
     <EntitySet Name="Reservation" EntityType="ReservationAppModel.Store.Reservation" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Style" EntityType="ReservationAppModel.Store.Style" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="ReservationAppModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_Account_Direction" Association="ReservationAppModel.Store.FK_Account_Direction">
-      <End Role="Direction" EntitySet="Direction" />
-      <End Role="Account" EntitySet="Account" />
-    </AssociationSet>
     <AssociationSet Name="FK_Business_Account" Association="ReservationAppModel.Store.FK_Business_Account">
       <End Role="Account" EntitySet="Account" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Direction" Association="ReservationAppModel.Store.FK_Business_Direction">
+      <End Role="Direction" EntitySet="Direction" />
       <End Role="Business" EntitySet="Business" />
     </AssociationSet>
     <AssociationSet Name="FK_Business_Style" Association="ReservationAppModel.Store.FK_Business_Style">
@@ -50,7 +50,6 @@
     <Property Name="userName" Type="varchar" Nullable="false" MaxLength="20" />
     <Property Name="userTypeId" Type="int" Nullable="false" />
     <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="directionId" Type="int" />
   </EntityType>
   <EntityType Name="Business">
     <Key>
@@ -64,12 +63,13 @@
     <Property Name="numSpaces" Type="int" Nullable="false" />
     <Property Name="mail" Type="varchar" MaxLength="20" />
     <Property Name="priceRangeId" Type="int" Nullable="false" />
+    <Property Name="directionId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Client">
     <Key>
       <PropertyRef Name="userId" />
     </Key>
-    <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="int" Nullable="false" />
     <Property Name="firstName" Type="varchar" Nullable="false" MaxLength="25" />
     <Property Name="pLastName" Type="varchar" Nullable="false" MaxLength="15" />
     <Property Name="mLastName" Type="varchar" Nullable="false" MaxLength="15" />
@@ -126,18 +126,6 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <Association Name="FK_Account_Direction">
-    <End Role="Direction" Type="ReservationAppModel.Store.Direction" Multiplicity="0..1" />
-    <End Role="Account" Type="ReservationAppModel.Store.Account" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Direction">
-        <PropertyRef Name="directionId" />
-      </Principal>
-      <Dependent Role="Account">
-        <PropertyRef Name="directionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Business_Account">
     <End Role="Account" Type="ReservationAppModel.Store.Account" Multiplicity="1" />
     <End Role="Business" Type="ReservationAppModel.Store.Business" Multiplicity="0..1" />
@@ -147,6 +135,18 @@
       </Principal>
       <Dependent Role="Business">
         <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Direction">
+    <End Role="Direction" Type="ReservationAppModel.Store.Direction" Multiplicity="1" />
+    <End Role="Business" Type="ReservationAppModel.Store.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="directionId" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="directionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

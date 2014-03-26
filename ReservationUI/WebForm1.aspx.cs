@@ -16,7 +16,9 @@ namespace ReservationUI
         {
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             client.Open();
-            DataSet data = client.GetAllBusiness();
+            int type = -1;
+            int direction = -1;
+            DataSet data = client.GetAllBusiness(type,direction);
             Account acc = client.GetAccount(3);
             Business business= client.GetBusiness(3);
             Client clien=client.GetClient(4);
@@ -28,8 +30,6 @@ namespace ReservationUI
             account.password = "543";
             account.userName = "Pepe";
             account.userTypeId = 2;
-            account.userId = 6;
-            account.directionId = 1;
             bool create= client.CreateAccount(account);
         }
     }

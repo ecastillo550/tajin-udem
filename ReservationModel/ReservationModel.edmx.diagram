@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ff37d09cac74b15a92a054db9c78b68" Name="Diagram1">
-        <EntityTypeShape EntityType="ReservationAppModel.Account" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservationAppModel.Business" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservationAppModel.Client" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservationAppModel.Direction" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservationAppModel.Message" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservationAppModel.Reservation" Width="1.5" PointX="10.5" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservationAppModel.Style" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservationAppModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="ReservationAppModel.FK_Account_Direction" ManuallyRouted="false" />
+      <Diagram DiagramId="39c2e16de5f349c19a1cdb02786f4b0e" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="ReservationAppModel.Account" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservationAppModel.Business" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservationAppModel.Client" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservationAppModel.Direction" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservationAppModel.Message" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservationAppModel.Reservation" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservationAppModel.Style" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservationAppModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="ReservationAppModel.FK_Business_Account" ManuallyRouted="false" />
         <AssociationConnector Association="ReservationAppModel.FK_Client_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="ReservationAppModel.FK_Business_Direction" ManuallyRouted="false" />
         <AssociationConnector Association="ReservationAppModel.FK_Business_Style" ManuallyRouted="false" />
         <AssociationConnector Association="ReservationAppModel.FK_Message_Business" ManuallyRouted="false" />
         <AssociationConnector Association="ReservationAppModel.FK_Reservation_Business" ManuallyRouted="false" />

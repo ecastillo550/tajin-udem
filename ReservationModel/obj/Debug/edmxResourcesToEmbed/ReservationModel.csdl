@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ReservationAppModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="ReservationAppEntities" p1:LazyLoadingEnabled="true">
+  <EntityContainer Name="ReservationAppEntities1" p1:LazyLoadingEnabled="true">
     <EntitySet Name="Account" EntityType="ReservationAppModel.Account" />
     <EntitySet Name="Business" EntityType="ReservationAppModel.Business" />
     <EntitySet Name="Client" EntityType="ReservationAppModel.Client" />
@@ -9,10 +9,6 @@
     <EntitySet Name="Reservation" EntityType="ReservationAppModel.Reservation" />
     <EntitySet Name="Style" EntityType="ReservationAppModel.Style" />
     <EntitySet Name="sysdiagrams" EntityType="ReservationAppModel.sysdiagrams" />
-    <AssociationSet Name="FK_Account_Direction" Association="ReservationAppModel.FK_Account_Direction">
-      <End Role="Direction" EntitySet="Direction" />
-      <End Role="Account" EntitySet="Account" />
-    </AssociationSet>
     <AssociationSet Name="FK_Business_Account" Association="ReservationAppModel.FK_Business_Account">
       <End Role="Account" EntitySet="Account" />
       <End Role="Business" EntitySet="Business" />
@@ -20,6 +16,10 @@
     <AssociationSet Name="FK_Client_Account" Association="ReservationAppModel.FK_Client_Account">
       <End Role="Account" EntitySet="Account" />
       <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Direction" Association="ReservationAppModel.FK_Business_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="Business" EntitySet="Business" />
     </AssociationSet>
     <AssociationSet Name="FK_Business_Style" Association="ReservationAppModel.FK_Business_Style">
       <End Role="Style" EntitySet="Style" />
@@ -50,8 +50,6 @@
     <Property Name="userName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="userTypeId" Type="Int32" Nullable="false" />
     <Property Name="userId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="directionId" Type="Int32" />
-    <NavigationProperty Name="Direction" Relationship="ReservationAppModel.FK_Account_Direction" FromRole="Account" ToRole="Direction" />
     <NavigationProperty Name="Business" Relationship="ReservationAppModel.FK_Business_Account" FromRole="Account" ToRole="Business" />
     <NavigationProperty Name="Client" Relationship="ReservationAppModel.FK_Client_Account" FromRole="Account" ToRole="Client" />
   </EntityType>
@@ -67,7 +65,9 @@
     <Property Name="numSpaces" Type="Int32" Nullable="false" />
     <Property Name="mail" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="priceRangeId" Type="Int32" Nullable="false" />
+    <Property Name="directionId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Account" Relationship="ReservationAppModel.FK_Business_Account" FromRole="Business" ToRole="Account" />
+    <NavigationProperty Name="Direction" Relationship="ReservationAppModel.FK_Business_Direction" FromRole="Business" ToRole="Direction" />
     <NavigationProperty Name="Style" Relationship="ReservationAppModel.FK_Business_Style" FromRole="Business" ToRole="Style" />
     <NavigationProperty Name="Message" Relationship="ReservationAppModel.FK_Message_Business" FromRole="Business" ToRole="Message" />
     <NavigationProperty Name="Reservation" Relationship="ReservationAppModel.FK_Reservation_Business" FromRole="Business" ToRole="Reservation" />
@@ -76,7 +76,7 @@
     <Key>
       <PropertyRef Name="userId" />
     </Key>
-    <Property Name="userId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
     <Property Name="firstName" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
     <Property Name="pLastName" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
     <Property Name="mLastName" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
@@ -96,7 +96,7 @@
     <Property Name="colony" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="city" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="postalCod" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Account" Relationship="ReservationAppModel.FK_Account_Direction" FromRole="Direction" ToRole="Account" />
+    <NavigationProperty Name="Business" Relationship="ReservationAppModel.FK_Business_Direction" FromRole="Direction" ToRole="Business" />
   </EntityType>
   <EntityType Name="Message">
     <Key>
@@ -142,18 +142,6 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <Association Name="FK_Account_Direction">
-    <End Role="Direction" Type="ReservationAppModel.Direction" Multiplicity="0..1" />
-    <End Role="Account" Type="ReservationAppModel.Account" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Direction">
-        <PropertyRef Name="directionId" />
-      </Principal>
-      <Dependent Role="Account">
-        <PropertyRef Name="directionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Business_Account">
     <End Role="Account" Type="ReservationAppModel.Account" Multiplicity="1" />
     <End Role="Business" Type="ReservationAppModel.Business" Multiplicity="0..1" />
@@ -175,6 +163,18 @@
       </Principal>
       <Dependent Role="Client">
         <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Direction">
+    <End Role="Direction" Type="ReservationAppModel.Direction" Multiplicity="1" />
+    <End Role="Business" Type="ReservationAppModel.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="directionId" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="directionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

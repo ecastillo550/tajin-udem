@@ -21,7 +21,7 @@ namespace ResevationService
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
         [OperationContract]
-        DataSet GetAllBusiness();
+        DataSet GetAllBusiness(int typeId, int directionId);
         [OperationContract]
         Account GetAccount(int id);
         [OperationContract]

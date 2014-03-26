@@ -16,7 +16,7 @@ namespace ReservationModel
     {
         public Direction()
         {
-            this.Account = new HashSet<Account>();
+            this.Business = new HashSet<Business>();
         }
     
         public int directionId { get; set; }
@@ -26,6 +26,6 @@ namespace ReservationModel
         public string city { get; set; }
         public int postalCod { get; set; }
     
-        public virtual ICollection<Account> Account { get; set; }
+        public virtual ICollection<Business> Business { get; set; }
     }
 }

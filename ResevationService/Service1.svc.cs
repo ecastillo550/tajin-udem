@@ -34,13 +34,27 @@ namespace ResevationService
             return composite;
         }
 
-        public DataSet GetAllBusiness()
+        public DataSet GetAllBusiness(int typeId, int directionId)
         {
             SqlConnection con = new SqlConnection("Data Source= localhost,18687; Integrated Security= SSPI; Initial Catalog=ReservationApp");
+            SqlDataAdapter adapter;
             try
             {
                 DataSet business = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("Select * from Business", con);
+                if (typeId == -1 && directionId == -1)
+                    adapter = new SqlDataAdapter("Select * from Business", con);
+                else
+                {
+                    if (typeId != -1 && directionId == -1)
+                        adapter = new SqlDataAdapter("Select * from Business where typeId=" + typeId, con);
+                    else
+                    {
+                        if (typeId == -1 && directionId != -1)
+                            adapter = new SqlDataAdapter("Select * from Business where directionId=" + directionId, con);
+                        else
+                            adapter = new SqlDataAdapter("Select * from Business where directionId=" + directionId + " and typeId=" + typeId, con);
+                    }
+                }
                 con.Open();
                 adapter.Fill(business, "Business");
                 con.Close();
@@ -70,7 +84,6 @@ namespace ResevationService
                     account.password = data.Tables[0].Rows[0]["password"].ToString();
                     account.userTypeId = Convert.ToInt32(data.Tables[0].Rows[0]["userTypeId"].ToString());
                     account.userName = data.Tables[0].Rows[0]["userName"].ToString();
-                    account.directionId = Convert.ToInt32(data.Tables[0].Rows[0]["directionId"].ToString());
                 }
                 con.Close();
                 return account;
@@ -128,6 +141,7 @@ namespace ResevationService
                     business.numSpaces = Convert.ToInt32(data.Tables[0].Rows[0]["numSpaces"].ToString());
                     business.priceRangeId = Convert.ToInt32(data.Tables[0].Rows[0]["priceRangeId"].ToString());
                     business.syleId = Convert.ToInt32(data.Tables[0].Rows[0]["syleId"].ToString());
+                    business.directionId = Convert.ToInt32(data.Tables[0].Rows[0]["directionId"].ToString());
                     GetStyle(business.syleId.Value);
                 }
                 con.Close();
@@ -214,6 +228,7 @@ namespace ResevationService
                 throw new System.ArgumentException(" GetMessage error");
             }
         }
+        //Reservacion especifica
         public Reservation GetReservation(int id)
         {
             SqlConnection con = new SqlConnection("Data Source= localhost,18687; Integrated Security= SSPI; Initial Catalog=ReservationApp");
@@ -227,6 +242,9 @@ namespace ResevationService
                 {
                     reservation.bUserId = Convert.ToInt32(data.Tables[0].Rows[0]["bUserId"].ToString());
                     reservation.cUserId=Convert.ToInt32(data.Tables[0].Rows[0]["bcUserId"].ToString());
+                    reservation.people = Convert.ToInt32(data.Tables[0].Rows[0]["people"].ToString());
+                    reservation.rDay = Convert.ToDateTime(data.Tables[0].Rows[0]["rDay"].ToString());
+                    reservation.rTime = TimeSpan.Parse(data.Tables[0].Rows[0]["rTime"].ToString());
                 }
 
                 return reservation;
@@ -236,7 +254,9 @@ namespace ResevationService
                 con.Close();
                 throw new System.ArgumentException("GetReservation error");
             }
+            //Obtener Todas las reservaciones
         }
+
         ////////////////////
         /////////////////
         ///////////
@@ -248,12 +268,10 @@ namespace ResevationService
             try
             {
                 con.Open();
-                //SqlCommand command = new SqlCommand("INSERT INTO Account (password,userName,userTypeId,directionId) VALUES ('" + account.password + "','" + account.userName + "'," + account.userTypeId + "," + account.directionId + ")", con);
-                SqlCommand command = new SqlCommand("INSERT INTO Account (password,userName,userTypeId,directionId) VALUES (@password,@userName,@userTypeId,@directionId)", con);
+                SqlCommand command = new SqlCommand("INSERT INTO Account (password,userName,userTypeId) VALUES (@password,@userName,@userTypeId)", con);
                 command.Parameters.AddWithValue("@password", account.password);
                 command.Parameters.AddWithValue("@userName", account.userName);
                 command.Parameters.AddWithValue("@userTypeId", account.userTypeId);
-                command.Parameters.AddWithValue("@directionId", account.directionId);
                 command.ExecuteNonQuery();
                 con.Close();
                 return true;
@@ -271,7 +289,7 @@ namespace ResevationService
             {
                 
                 con.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Business (businessName,telephone,description,styleId,numSpaces,mail,priceRangeId) VALUES (@businessName,@telephone,@description,@styleId,@numSpaces,@mail,@priceRangeId)", con);
+                SqlCommand command = new SqlCommand("INSERT INTO Business (businessName,telephone,description,styleId,numSpaces,mail,priceRangeId,directionId) VALUES (@businessName,@telephone,@description,@styleId,@numSpaces,@mail,@priceRangeId,@directionId)", con);
                 command.Parameters.AddWithValue("@businessName", business.bussinesName);
                 command.Parameters.AddWithValue("@telephone", business.telephone);
                 command.Parameters.AddWithValue("@description", business.description);
@@ -279,6 +297,7 @@ namespace ResevationService
                 command.Parameters.AddWithValue("@numSpaces", business.numSpaces);
                 command.Parameters.AddWithValue("@mail", business.mail);
                 command.Parameters.AddWithValue("@priceRangeId", business.priceRangeId);
+                command.Parameters.AddWithValue("@directionId", business.directionId);
                 command.ExecuteNonQuery();
                 con.Close();
                 return true;
@@ -309,7 +328,7 @@ namespace ResevationService
             {
                 con.Close();
                 return false;
-            }
+            }   
         }     
     }
 }

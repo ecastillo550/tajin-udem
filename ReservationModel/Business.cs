@@ -28,8 +28,10 @@ namespace ReservationModel
         public int numSpaces { get; set; }
         public string mail { get; set; }
         public int priceRangeId { get; set; }
+        public int directionId { get; set; }
     
         public virtual Account Account { get; set; }
+        public virtual Direction Direction { get; set; }
         public virtual Style Style { get; set; }
         public virtual ICollection<Message> Message { get; set; }
         public virtual ICollection<Reservation> Reservation { get; set; }

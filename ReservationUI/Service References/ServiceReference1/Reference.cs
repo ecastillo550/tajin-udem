@@ -91,10 +91,10 @@ namespace ReservationUI.ServiceReference1 {
         System.Threading.Tasks.Task<ReservationUI.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ReservationUI.ServiceReference1.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllBusiness", ReplyAction="http://tempuri.org/IService1/GetAllBusinessResponse")]
-        System.Data.DataSet GetAllBusiness();
+        System.Data.DataSet GetAllBusiness(int typeId, int directionId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllBusiness", ReplyAction="http://tempuri.org/IService1/GetAllBusinessResponse")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetAllBusinessAsync();
+        System.Threading.Tasks.Task<System.Data.DataSet> GetAllBusinessAsync(int typeId, int directionId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAccount", ReplyAction="http://tempuri.org/IService1/GetAccountResponse")]
         ReservationModel.Account GetAccount(int id);
@@ -188,12 +188,12 @@ namespace ReservationUI.ServiceReference1 {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public System.Data.DataSet GetAllBusiness() {
-            return base.Channel.GetAllBusiness();
+        public System.Data.DataSet GetAllBusiness(int typeId, int directionId) {
+            return base.Channel.GetAllBusiness(typeId, directionId);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetAllBusinessAsync() {
-            return base.Channel.GetAllBusinessAsync();
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetAllBusinessAsync(int typeId, int directionId) {
+            return base.Channel.GetAllBusinessAsync(typeId, directionId);
         }
         
         public ReservationModel.Account GetAccount(int id) {

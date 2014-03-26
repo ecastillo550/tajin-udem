@@ -13,10 +13,10 @@ namespace ReservationModel
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ReservationAppEntities : DbContext
+    public partial class ReservationAppEntities1 : DbContext
     {
-        public ReservationAppEntities()
-            : base("name=ReservationAppEntities")
+        public ReservationAppEntities1()
+            : base("name=ReservationAppEntities1")
         {
         }
     
