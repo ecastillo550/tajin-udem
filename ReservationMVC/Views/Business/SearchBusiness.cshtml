@@ -46,13 +46,14 @@
                  using(Html.BeginForm())
                  {
                      @Html.HiddenFor(model => business.businessId);
-		<h5><a href="#">Negocio:@Html.DisplayFor(model=>business.businessName)</a></h5>
-		<a href="#">Tipo de comida: @ViewBag.StyleName</a>
-		<p>Descripcion:@Html.DisplayFor(model=>business.description)</p>
-		<p>Teléfono:@Html.DisplayFor(model=>business.telephone)</p>
-                if(type!=2)
+		<h5><a href="#">Negocio: @Html.DisplayFor(model=>business.businessName)</a></h5>
+		<a href="#">Tipo de comida: @Html.DisplayFor(model=>business.Style.style1)</a>
+		<p>Descripcion: @Html.DisplayFor(model=>business.description)</p>
+		<p>Teléfono: @Html.DisplayFor(model=>business.telephone)</p>
+                if(type==2)
             {	
-		<input type="submit" class="button" value="Reservar" />
+         <input type="submit" class="button" value="Editar restaurante" name="submit" />
+		<input type="submit" class="button" value="Consultar reservaciones" name="submit"/>
                 }
                  }
 		

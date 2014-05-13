@@ -15,12 +15,15 @@
       <xs:element minOccurs="0" name="Reservation" nillable="true" type="tns:ArrayOfReservation" />
       <xs:element minOccurs="0" name="Style" nillable="true" type="tns:Style" />
       <xs:element minOccurs="0" name="businessId" type="xs:int" />
-      <xs:element minOccurs="0" name="bussinesName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="businessName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="directionId" type="xs:int" />
       <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="numSpaces" type="xs:int" />
-      <xs:element minOccurs="0" name="priceRangeId" type="xs:int" />
+      <xs:element minOccurs="0" name="people" type="xs:int" />
+      <xs:element minOccurs="0" name="priceRange" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rDay" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="rTime" type="ser:duration" />
       <xs:element minOccurs="0" name="syleId" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="userId" type="xs:int" />
@@ -31,6 +34,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Business" nillable="true" type="tns:Business" />
       <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+      <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="userId" type="xs:int" />
       <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
@@ -46,7 +50,6 @@
       <xs:element minOccurs="0" name="clientId" type="xs:int" />
       <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="mLastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="pLastName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="userId" type="xs:int" />
@@ -111,4 +114,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Style" nillable="true" type="tns:Style" />
+  <xs:complexType name="ArrayOfStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Style" nillable="true" type="tns:Style" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStyle" nillable="true" type="tns:ArrayOfStyle" />
 </xs:schema>

@@ -18,7 +18,7 @@
  
 	<div id="content" >
 	
-	<form class="FormSignIn" role="form" action="@Url.Action("SignIn_Business", "Cuentas")" method="post">
+	
 	
 		
 		
@@ -26,11 +26,12 @@
             @using(Html.BeginForm())
     {
                 
-                <h3>Registro de Negocio</h3>
+                <h3>Editar Negocio</h3>
 		<hr>
 
 		<ul>
-		
+		@Html.HiddenFor(model=>model.businessId)
+            @Html.HiddenFor(model=>model.directionId)
 		Nombre de Negocio: <li>@Html.EditorFor(model=>model.businessName)</li>
 		Teléfono: <li>@Html.EditorFor(model=>model.telephone)</li>
 		Descripción: <li>@Html.EditorFor(model=>model.description)</li><br>
@@ -66,7 +67,7 @@
 		
 		</ul>
 
-		</form>
+		
 		
 	
 			

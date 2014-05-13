@@ -25,7 +25,7 @@ namespace ReservationMVC.Controllers
             {
                 ViewBag.Login = "login";
             }
-
+            ViewBag.UserType = (int)Session["userType"];
             Style style = serviceClient.GetStyle(styleId);
             ViewBag.StyleName = style.style1;
             ViewBag.BusinessList = serviceClient.GetAllBusiness(styleId, -1);
@@ -34,11 +34,20 @@ namespace ReservationMVC.Controllers
         [HttpPost]
         public ActionResult SearchBusiness(Business business)
         {
+            if (Session["userType"] != null)
+            {
+                ViewBag.Login = (int)Session["userType"];
+            }
           return RedirectToAction("CreateReservation", "Client", business);
         }
         public ActionResult UserInformation()
         {
             ResevationService.Service1 serviceClient= new ResevationService.Service1();
+            if (Session["userId"] != null)
+            {
+                ViewBag.Login = "login";
+                ViewBag.UserType = (int)Session["userType"];
+            }
             int userId = int.Parse(Session["userId"].ToString());
             Client client = serviceClient.GetClient(userId);
             client.Account = serviceClient.GetAccount(userId);
@@ -49,6 +58,11 @@ namespace ReservationMVC.Controllers
         public ActionResult UserEdit()
         {
             int userId = int.Parse(Session["userId"].ToString());
+            if (Session["userId"] != null)
+            {
+                ViewBag.Login = "login";
+                ViewBag.UserType = (int)Session["userType"];
+            }
             ResevationService.Service1 serviceClient = new ResevationService.Service1();
             Client client = serviceClient.GetClient(userId);
             client.Account = serviceClient.GetAccount(userId);
@@ -73,12 +87,17 @@ namespace ReservationMVC.Controllers
             {
                 ViewBag.Login = "login";
             }
+            if (Session["userType"] != null)
+            {
+                ViewBag.UserType = (int)Session["userType"];
+            }
             int businessid = business.businessId;
             ResevationService.Service1 serviceClient = new ResevationService.Service1();
             business = serviceClient.GetBusiness(business.businessId);
             business.businessId = businessid;
             business.Direction = serviceClient.GetDirection(business.directionId);
             business.Style = serviceClient.GetStyle(business.businessId);
+            
             return View(business);
         }
         [HttpPost]
@@ -124,6 +143,7 @@ namespace ReservationMVC.Controllers
         {
             ResevationService.Service1 serviceClient = new ResevationService.Service1();
             int userId = int.Parse(Session["userId"].ToString());
+            ViewBag.UserType = (int)Session["userType"];
             Client client = serviceClient.GetClient(userId);
             List<ReservationModel.Reservation> reservationList = serviceClient.GetAllClientReservations(client.clientId);
             foreach (ReservationModel.Reservation reservation in reservationList)

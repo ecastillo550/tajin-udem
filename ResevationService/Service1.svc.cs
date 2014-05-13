@@ -94,6 +94,7 @@ namespace ResevationService
                         account.userTypeId = Convert.ToInt32(data.Tables[0].Rows[0]["userTypeId"].ToString());
                         account.userName = data.Tables[0].Rows[0]["userName"].ToString();
                         account.mail = data.Tables[0].Rows[0]["mail"].ToString();
+                        account.userId =Convert.ToInt32(data.Tables[0].Rows[0]["userId"].ToString());
                     }
                     con.Close();
                     return account;
@@ -196,6 +197,34 @@ namespace ResevationService
                         client.mLastName = data.Tables[0].Rows[0]["mLastName"].ToString();
                         client.pLastName = data.Tables[0].Rows[0]["pLastName"].ToString();
                         client.telephone = data.Tables[0].Rows[0]["telephone"].ToString();
+                    }
+                    return client;
+                }
+                catch (Exception e)
+                {
+                    throw new FaultException("Error in Get Client " + e);
+                }
+            }
+        }
+        public Client GetBusinessClient(int id)
+        {
+            using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConString"].ConnectionString))
+            {
+                Client client = new Client();
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("Select * from Client where clientId=" + id, con);
+                    DataSet data = new DataSet();
+                    adapter.Fill(data, "Client");
+                    if (data.Tables[0].Rows.Count > 0)
+                    {
+                        client.clientId = Convert.ToInt32(data.Tables[0].Rows[0]["clientId"].ToString());
+                        client.firstName = data.Tables[0].Rows[0]["firstName"].ToString();
+                        client.mLastName = data.Tables[0].Rows[0]["mLastName"].ToString();
+                        client.pLastName = data.Tables[0].Rows[0]["pLastName"].ToString();
+                        client.telephone = data.Tables[0].Rows[0]["telephone"].ToString();
+                        client.userId = Convert.ToInt32(data.Tables[0].Rows[0]["userId"].ToString());
                     }
                     return client;
                 }
@@ -783,7 +812,8 @@ namespace ResevationService
             }
         }
         public List<Business> RandomBusiness()
-        { using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConString"].ConnectionString))
+        { 
+            using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConString"].ConnectionString))
             {
                 try
                 {
@@ -817,6 +847,70 @@ namespace ResevationService
                 }
             }
             
+        }
+        public List<Business> GetAllUserBusiness(int userId)
+        {
+            using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConString"].ConnectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("Select * from Business WHERE userId="+userId, con); ;
+                try
+                {
+                    DataSet data = new DataSet();
+                    con.Open();
+                    adapter.Fill(data, "Business");
+                    List<Business> businessList = new List<Business>();
+                    var table = data.Tables["Business"];
+                    foreach (DataRow row in table.Rows)
+                    {
+                        Business business = new Business();
+                        business.businessId = (int)row["businessId"];
+                        business.businessName = (String)row["businessName"];
+                        business.description = (String)row["description"];
+                        business.directionId = (int)row["directionId"];
+                        business.mail = (String)row["mail"];
+                        business.numSpaces = (int)row["numSpaces"];
+                        business.priceRange = (String)row["priceRange"];
+                        business.syleId = (int)row["syleId"];
+                        business.telephone = (String)row["telephone"];
+                        business.userId = (int)row["userId"];
+                        business.Style = GetStyle((int)business.syleId);
+                        businessList.Add(business);
+                    }
+
+                    return businessList;
+                }
+                catch (Exception e)
+                {
+                    throw new FaultException("Error in Get User Business " + e);
+                }
+            }
+        }
+        public List<String> GetAllUserNames()
+        {
+            using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConString"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Account", con);
+                    DataSet data = new DataSet();
+                    adapter.Fill(data, "Account");
+                    List<String> UserNameList = new List<String>();
+                    var table = data.Tables["Account"];
+                    string name = "";
+                    foreach (DataRow row in table.Rows)
+                    {
+                        name =(String) row["userName"];
+                        UserNameList.Add(name);
+                    }
+
+                    return UserNameList;
+                }
+                catch (Exception e)
+                {
+                    throw new FaultException("Error in getting all user names " + e);
+                }
+            }  
         }
     }
 }

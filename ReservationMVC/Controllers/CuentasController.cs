@@ -28,6 +28,15 @@ namespace ReservationMVC.Controllers
             account.mail= form["mail"].ToString();
             account.password = form["password"].ToString();
             string type = form["typeOption"].ToString();
+            List<String> userNames = client.GetAllUserNames();
+            foreach (string name in userNames)
+            {
+                if (account.userName.Equals(name))
+                {
+                    ViewBag.Error = "Porfavor intente otro nombre de usuario";
+                return View();
+                }
+            } 
             if (type.Equals("client"))
             {
                 account.userTypeId = 1;
@@ -94,10 +103,10 @@ namespace ReservationMVC.Controllers
             //int userId = 3;
                 //(int)Session["userId"];
             int directionId = client.CreateDirection(business.Direction);
-            business.userId = (int)Session["accountId"];
+            business.userId = (int)Session["userId"];
             business.directionId = directionId;
             bool created= client.CreateBusinessAccount(business);
-            
+            Session["userType"] = 2;
             return RedirectToAction("Index","Home");
         }
         [HttpPost]
@@ -117,12 +126,16 @@ namespace ReservationMVC.Controllers
                     {
                         if (account.userTypeId == 2)
                         {
+                            //2 business
                             Session["userId"] = account.userId;
-                            return RedirectToAction("Index", "Business");
+                            Session["userType"] = account.userTypeId;
+                            return RedirectToAction("Index", "Home");
                         }
                         else
                         {
+                            //1 client
                             Session["userId"] = account.userId;
+                            Session["userType"] = account.userTypeId;
                             return RedirectToAction("Index", "Home");
                         }
                     }

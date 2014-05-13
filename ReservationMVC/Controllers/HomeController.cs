@@ -16,8 +16,13 @@ namespace ReservationMVC.Controllers
         
         public ActionResult Index()
         {
-            if(Session["userId"]!=null){
+            if (Session["userId"] != null)
+            {
                 ViewBag.Login = "login";
+            }
+            else
+            {
+                Session["userType"] = 0;
             }
             ViewBag.Message = "";
             return View();
@@ -45,7 +50,9 @@ namespace ReservationMVC.Controllers
             if (Session["userId"] != null)
             {
                 ViewBag.Login = "login";
+               
             }
+            ViewBag.UserType = (int)Session["userType"];
             Direction direction = client.GetDirection(business.directionId);
             business.Direction = direction;
             int id = Convert.ToInt32(business.syleId);

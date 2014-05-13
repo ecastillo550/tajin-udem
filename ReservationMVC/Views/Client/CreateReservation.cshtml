@@ -62,7 +62,8 @@
 		
 		
 		<aside>
-				
+		@if(ViewBag.userType!=2)
+            {	
 		<form>
 		<ul>
 		<li>Día:@Html.EditorFor(model=>model.rDay)<br></li>
@@ -72,7 +73,7 @@
 		
 		<input type="submit" class="button" value="Reservar" />
 		</form>
-			
+        }
 			
 		</aside>
 		}

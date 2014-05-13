@@ -2,6 +2,7 @@
 @model Client
 @{
     ViewBag.Title = "User";
+    int type = @ViewBag.UserType;
 }
 
 <title>Reservaciones</title>
@@ -38,7 +39,13 @@
 		<ul>
 	<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
 	<li><a href="@Url.Action("UserEdit", "Client")">Editar Información</a></li>
-	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>
+            @if(type!=2){
+	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>}
+            @if (type == 2)
+            {
+                <li><a href="@Url.Action("SearchBusiness", "Business")">Consultar Restaurantes</a></li>
+                <li><a href="@Url.Action("SignIn_Business", "Cuentas")">Crear Restaurante</a></li>
+            }
 		
 			
 		</ul>

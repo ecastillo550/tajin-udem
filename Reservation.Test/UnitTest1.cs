@@ -102,7 +102,7 @@ namespace Reservation.Test
             Account account = new Account();
             account.mail = "test";
             account.password = "test";
-            account.userName = "test";
+            account.userName = "testmss";
             account.userTypeId = 1;
            int created=client.CreateAccount(account);
            

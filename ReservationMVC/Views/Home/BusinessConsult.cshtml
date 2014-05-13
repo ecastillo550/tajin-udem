@@ -2,6 +2,7 @@
 @model Business
 @{
     ViewBag.Title = "UserBusiness";
+    int type = @ViewBag.UserType;
 }
 
 <title>Reservaciones</title>
@@ -47,11 +48,18 @@
 	
 	<aside>
 		<ul>
+            @if(type!=0){
+                if(type!=1){
 	<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
 	<li><a href="@Url.Action("UserEdit", "Client")">Editar Información</a></li>
 	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>
-	
-		
+            }
+            else{
+    <li><a href="@Url.Action("UserInformation", "Business")">Usuario</a></li>		
+	<li><a href="@Url.Action("UserEdit", "Business")">Editar Información</a></li>
+	<li><a href="@Url.Action("SearchBusiness", "Business")">Consultar Restaurantes</a></li>
+                }
+            }
 			
 		</ul>
 		
@@ -79,7 +87,9 @@
 	<li>Número de Espacios:</li>@Html.DisplayFor(model=>model.numSpaces)
 	<li>Rango de Precios:</li>@Html.DisplayFor(model=>model.priceRange)
 	<li>Teléfono:</li>@Html.DisplayFor(model=>model.telephone)
+        @if(type!=2){
 	<input type="submit" class="button" value="Reservar" />
+        }
 	</ul>
    } 		
 	</section>

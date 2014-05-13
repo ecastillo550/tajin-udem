@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:3382/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:3382/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:3382/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ReservationModel" />
+      <xsd:import schemaLocation="http://localhost:3382/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetAllBusiness_InputMessage">
@@ -145,6 +146,48 @@
   <wsdl:message name="IService1_SearchBusiness_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchBusinessResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetAllStyles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStyles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllStyles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStylesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EndReservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndReservation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EndReservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RandomBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:RandomBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RandomBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RandomBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUserBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUserBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessClient" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUserNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserNames" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUserNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserNamesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetAllBusiness">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllBusiness" message="tns:IService1_GetAllBusiness_InputMessage" />
@@ -237,6 +280,34 @@
     <wsdl:operation name="SearchBusiness">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchBusiness" message="tns:IService1_SearchBusiness_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchBusinessResponse" message="tns:IService1_SearchBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStyles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllStyles" message="tns:IService1_GetAllStyles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllStylesResponse" message="tns:IService1_GetAllStyles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateMessage" message="tns:IService1_CreateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateMessageResponse" message="tns:IService1_CreateMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndReservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EndReservation" message="tns:IService1_EndReservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EndReservationResponse" message="tns:IService1_EndReservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RandomBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RandomBusiness" message="tns:IService1_RandomBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RandomBusinessResponse" message="tns:IService1_RandomBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUserBusiness" message="tns:IService1_GetAllUserBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUserBusinessResponse" message="tns:IService1_GetAllUserBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBusinessClient" message="tns:IService1_GetBusinessClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBusinessClientResponse" message="tns:IService1_GetBusinessClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUserNames" message="tns:IService1_GetAllUserNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUserNamesResponse" message="tns:IService1_GetAllUserNames_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -441,6 +512,69 @@
     </wsdl:operation>
     <wsdl:operation name="SearchBusiness">
       <soap:operation soapAction="http://tempuri.org/IService1/SearchBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStyles">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllStyles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessage">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndReservation">
+      <soap:operation soapAction="http://tempuri.org/IService1/EndReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RandomBusiness">
+      <soap:operation soapAction="http://tempuri.org/IService1/RandomBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserBusiness">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUserBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessClient">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBusinessClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserNames">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUserNames" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

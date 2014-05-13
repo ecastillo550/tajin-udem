@@ -40,13 +40,14 @@
 	
 	<aside>
 		<ul>
-<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
+	<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
 	<li><a href="@Url.Action("UserEdit", "Client")">Editar Información</a></li>
-            @if(type!=2){
+	    @if(type!=2){
 	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>}
             @if (type == 2)
             {
                 <li><a href="@Url.Action("SearchBusiness", "Business")">Consultar Restaurantes</a></li>
+                <li><a href="@Url.Action("SignIn_Business", "Business")">Crear Restaurante</a></li>
             }
 			
 		</ul>
@@ -69,6 +70,10 @@
 		<a href="#">Tipo de comida: @Html.DisplayFor(model=>reservation.Business.Style.style1) </a>
 		<p>Descripcion:@Html.DisplayFor(model=>reservation.Business.description)</p>
 		<p>Teléfono:@Html.DisplayFor(model=>reservation.Business.telephone)</p>
+      <h3>Informacion del cliente</h3>
+      <p>Nombre: @Html.DisplayFor(model=>reservation.Client.firstName)  @Html.DisplayFor(model=>reservation.Client.pLastName)   @Html.DisplayFor(model=>reservation.Client.mLastName)</p>
+      <p>Teleono: @Html.DisplayFor(model=>reservation.Client.telephone)</p>
+      <p>Correo electronico: @Html.DisplayFor(model=>reservation.Client.Account.mail)</p>
       <h3>Informacion de la reservacion</h3>
         <p>Dia: @Html.DisplayFor(model=>reservation.rDay)</p>
       <p>hora:: @Html.DisplayFor(model=>reservation.rTime)</p>

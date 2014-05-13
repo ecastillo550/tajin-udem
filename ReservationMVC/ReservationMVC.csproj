@@ -274,13 +274,13 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Service References\ServiceReference1\Service1.disco" />
-    <Content Include="Service References\ServiceReference1\configuration91.svcinfo" />
-    <Content Include="Service References\ServiceReference1\configuration.svcinfo" />
-    <Content Include="Service References\ServiceReference1\Reference.svcmap">
+    <None Include="Service References\ServiceReference1\Service1.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -319,7 +319,7 @@
     <Content Include="Views\Client\SearchBusiness.cshtml" />
     <Content Include="Views\Client\ReservationConsult.cshtml" />
     <Content Include="Views\Business\Index.cshtml" />
-    <Content Include="Service References\ServiceReference1\Service1.wsdl" />
+    <None Include="Service References\ServiceReference1\Service1.wsdl" />
     <None Include="Service References\ServiceReference1\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -332,6 +332,12 @@
     <Content Include="Views\Client\CreateReservation.cshtml" />
     <Content Include="Views\Cuentas\SignIn_Client.cshtml" />
     <Content Include="Views\Client\SuccessReservation.cshtml" />
+    <Content Include="Views\Business\ReservationConsult.cshtml" />
+    <Content Include="Views\Business\SearchBusiness.cshtml" />
+    <None Include="Service References\ServiceReference1\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Business\EditBusiness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
