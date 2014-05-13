@@ -1,0 +1,70 @@
+﻿@using ReservationModel;
+@model Client
+
+
+
+<title>Reservaciones</title>
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+ 
+	<div id="content" >
+	
+	<form class="FormSignIn" role="form" action="@Url.Action("SignIn_Client", "Cuentas")" method="post">
+	
+		
+		
+		<br />
+        <br />
+        <br />
+            @using(Html.BeginForm())
+    {
+                
+                <h3>Registro de Cliente</h3>
+		<hr>
+
+		<ul>
+		
+		Nombre: <li>@Html.EditorFor(model=>model.firstName)</li>
+		Apellido paterno: <li>@Html.EditorFor(model=>model.pLastName)</li>
+		Apellido materno: <li>@Html.EditorFor(model=>model.mLastName)</li>
+        Telefono: <li>@Html.EditorFor(model=>model.telephone)</li>
+
+          </ul>    
+            
+            
+            <br>
+               
+            <p>
+        <input type="submit" class="button" value="Guardar" />
+         </p>
+               
+            }
+        
+		
+		
+		
+			
+		
+		</ul>
+
+		</form>
+		
+	
+			
+	</div>
+	
+	
+	
+	
+
+</body>
+</html>

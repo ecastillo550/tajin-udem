@@ -1,0 +1,89 @@
+﻿@using ReservationModel;
+@model Business
+@{
+    ViewBag.Title = "Index";
+}
+
+<title>Reservaciones</title>
+
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+		<div id="restPage" class="bg_blur">
+		
+		<div id="navbar">
+		
+            <ul>
+            @if(ViewBag.Login==null){
+		<li><a href="@Url.Action("Login", "Cuentas")">Inicia Sesión</a></li>
+                <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+            }
+             @if (ViewBag.Login != null)
+             {
+                 <li><a href="@Url.Action("LogOut", "Cuentas")">LogOut</a></li>
+            <li><a href="@Url.Action("UserInformation", "Client")">Perfil</a></li>
+                 <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+                 
+             }</ul>
+		
+
+		</div>
+		
+		
+		
+		<article class="wrap">
+		 @using(Html.BeginForm())
+                 {
+		<section>
+            <h2 style="background-color:red;">@ViewBag.ErrorNoLogin</h2>
+		<h4>Nombre Restaurante: @Html.DisplayFor(model=> model.businessName)</h4>
+		<h3>Dirección del Restaurante: </h3>
+            <p>@Html.DisplayFor(model=> model.Direction.street) <br />
+                @Html.DisplayFor(model=> model.Direction.number)<br />
+                @Html.DisplayFor(model=> model.Direction.colony),   @Html.DisplayFor(model=> model.Direction.city) <br />
+             codigo postal: @Html.DisplayFor(model=> model.Direction.postalCod)</p>
+		<a href="#">tipo de Cocina:</a><p>@Html.DisplayFor(model=> model.Style.style1)</p>
+		<p>Descripción del restaurante: @Html.DisplayFor(model=> model.description)</p>
+		<p>Numero de espacios </p>@Html.DisplayFor(model=> model.numSpaces)
+		<p>Price range: @Html.DisplayFor(model=> model.priceRange)</p>
+		
+		<h5>Contacto</h5>
+		<p>telefono:@Html.DisplayFor(model=> model.telephone)</p>
+		<a href="#" action="mailto:you@site.com"><p>@Html.DisplayFor(model=> model.mail)</p></a>
+		</section>
+		
+		
+		<aside>
+				
+		<form>
+		<ul>
+		<li>Día:@Html.EditorFor(model=>model.rDay)<br></li>
+		<li> Personas:@Html.EditorFor(model=>model.people)<br></li>
+		 <li>Hora:@Html.EditorFor(model=>model.rTime) <br></li> 
+		</ul>
+		
+		<input type="submit" class="button" value="Reservar" />
+		</form>
+			
+			
+		</aside>
+		}
+	
+			
+			
+		</article>
+ 
+		</div>
+	
+
+
+</body>
+</html>

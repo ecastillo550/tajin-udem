@@ -1,0 +1,80 @@
+﻿@using ReservationModel;
+@model Client
+@{
+    ViewBag.Title = "UserEdit";
+}
+
+<title>Reservaciones</title>
+
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+	<div id="navbar">
+		
+		<ul>
+            <li><a href="@Url.Action("LogOut", "Cuentas")">LogOut</a></li>
+		<li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+        
+		
+		
+		</ul>
+
+		</div>
+
+ 
+	<div id="user">	
+	<article class="wrap">
+	
+	<aside>
+		<ul>
+	<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
+	<li><a href="@Url.Action("UserEdit", "Client")">Editar Información</a></li>
+	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>
+
+		
+			
+		</ul>
+		
+	</aside>
+
+	
+	<section>
+	
+	<h3>Editar Información de Usuario</h3>
+	
+	@using (Html.BeginForm())
+ {
+     @Html.HiddenFor(model=>model.clientId)
+     @Html.HiddenFor(model=>model.userId)
+         @Html.Label("Contraseña:")<li>@Html.EditorFor(model=> model.Account.password)</li>
+		 @Html.Label("Correo Electrónico:") <li>@Html.EditorFor(model=> model.Account.mail)</li><br />
+		 @Html.Label("Nombre:") <li>@Html.EditorFor(model=> model.firstName)</li>
+		 @Html.Label("Apellido Paterno:") <li>@Html.EditorFor(model=> model.pLastName)</li>
+		 @Html.Label("Apellido Materno:") <li>@Html.EditorFor(model=> model.mLastName)</li>
+		 @Html.Label("Teléfono: ")<li>@Html.EditorFor(model=> model.telephone)</li>	<br />
+     
+     <input type="submit" class="button" value="Guardar" />
+ }
+		
+	</section>
+	
+	
+					
+	</article>
+	
+	
+	</div>
+	@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+</body>
+</html>

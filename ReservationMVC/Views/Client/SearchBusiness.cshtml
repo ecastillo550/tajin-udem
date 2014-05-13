@@ -1,0 +1,75 @@
+﻿@using ReservationModel;
+@model Business
+@{
+    ViewBag.Title = "SearchBusiness";
+    List < Business > businessList= ViewBag.BusinessList;
+}
+
+<title>Reservaciones</title>
+<hed>
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+ <div id="navbar">
+		   <ul>
+            @if(ViewBag.Login==null){
+		<li><a href="@Url.Action("Login", "Cuentas")">Inicia Sesión</a></li>
+                <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+            }
+             @if (ViewBag.Login != null)
+             {
+                 <li><a href="@Url.Action("LogOut", "Cuentas")">LogOut</a></li>
+            <li><a href="@Url.Action("UserInformation", "Client")">Perfil</a></li>
+                 <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+                 
+             }</ul>
+
+		</div>
+		
+	<div id="search" >
+
+	<article class="wrap">
+	
+	<h4>Tipo de cocina:@ViewBag.StyleName
+	</h4>
+		
+		<section id="restaurant">
+            @foreach(Business business in businessList){
+                 using(Html.BeginForm())
+                 {
+                     @Html.HiddenFor(model => business.businessId);
+		<h5><a href="#">Negocio:@Html.DisplayFor(model=>business.businessName)</a></h5>
+		<a href="#">Tipo de comida: @ViewBag.StyleName</a>
+		<p>Descripcion:@Html.DisplayFor(model=>business.description)</p>
+		<p>Teléfono:@Html.DisplayFor(model=>business.telephone)</p>
+		<input type="submit" class="button" value="Reservar" />
+		
+                 }
+		
+		<hr>}</section>
+		
+		
+		
+			
+	</article>
+		
+	</div>	
+
+
+	
+			
+	</div>
+	
+	
+	
+	
+
+</body>
+</html>

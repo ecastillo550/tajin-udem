@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "UserBusinessEdit";
+}
+
+<title>Reservaciones</title>
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+	<div id="navbar">
+		
+		<ul>
+		<li><a href="user.html">Usuario</a></li>
+		<li><input id="globalSearch" type="text" name="userId" placeholder="Nombre del restaurante o cocina"><a href="" class="gsearch"></a></li>
+		
+		
+		</ul>
+
+		</div>
+
+ 
+	<div id="user">	
+	<article class="wrap">
+	
+	<aside>
+		<ul>
+	<li><a href="user.html">Usuario</a></li>		
+	<li><a href="userEdit.html">Editar Información</a></li>
+	<li><a href="userBusiness.html">Negocio</li>
+	<li><a href="userBusinessEdit.html">Editar Información Negocio</a></li>
+	<li><a href="signIn_business.html">Nuevo Negocio</a></li>
+	<li><a href="reservationConsult.html">Consultar Reservaciones</a></li>
+		
+			
+		</ul>
+		
+	</aside>
+	
+	<section>
+	
+	<form>
+	
+		
+		<h3>Editar Información de Negocio</h3>
+		
+		<ul>
+		
+		Nombre de Negocio: <li><input type="text" name="businessName"></li>
+		Teléfono: <li><input type="text" name="telephone"></li>
+		Descripción: <li><textarea cols="30" rows="4" name="description"></textarea></li><br>
+		Calle: <li><input type="text" name="street"></li>
+		Colonia: <li><input type="text" name="colony"></li>
+		Ciudad: <li><input type="text" name="city"></li>
+		Número: <li><input type="text" name="number"></li>
+		Código Postal: <li><input type="text" name="postalCod"></li>
+		
+		Tipo de Cocina:<li>
+		
+		<select>
+		  <option name="styleId" value="business">Mexicana</option>
+		  <option name="styleId" value="client">Italiana</option>
+		</select>
+		
+		</li>		Número de Espacios: <li><input type="text" name="numSpaces"></li>
+		Correo Electrónico: <li><input type="text" name="mail"></li>
+		Rango de Precio: <li><input type="text" name="priceRangeId"></li><br>
+			
+		
+		</ul>
+
+		<br><input class="button" type="submit" value="Guardar" >
+		
+		
+   
+	
+		</form>
+		
+		
+	</section>
+				
+	</article>
+	
+	
+	</div>
+	
+
+</body>
+</html>

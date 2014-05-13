@@ -1,0 +1,70 @@
+﻿@using ReservationModel;
+@model Client
+@{
+    ViewBag.Title = "User";
+}
+
+<title>Reservaciones</title>
+
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+	
+	<div id="navbar">
+		
+		<ul>
+		<li><li><a href="@Url.Action("LogOut", "Cuentas")">LogOut</a></li>
+            <a href="@Url.Action("Index", "Home")">Inicio</a></li>
+            
+		
+		
+		</ul>
+
+		</div>
+
+ 
+	<div id="user">	
+	<article class="wrap">
+	
+	<aside>
+		<ul>
+	<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
+	<li><a href="@Url.Action("UserEdit", "Client")">Editar Información</a></li>
+	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>
+		
+			
+		</ul>
+		
+	</aside>
+	<section>
+	
+	<h3>Información de Usuario</h3>
+		
+	<ul>
+	<li>Nombre: @Html.DisplayFor(model=>model.firstName)  @Html.DisplayFor(model=>model.pLastName) @Html.DisplayFor(model=>model.mLastName)</li>		
+	<li>Cuenta: @Html.DisplayFor(model=>model.Account.userName)</li>
+	<li>Contraseña:  @Html.DisplayFor(model=>model.Account.password)</li>
+	<li>Correo Electrónico:  @Html.DisplayFor(model=>model.Account.mail)</li>
+	<li>Teléfono:  @Html.DisplayFor(model=>model.telephone)</li>			
+	</ul>
+		
+	</section>
+	
+	
+				
+	</article>
+	
+	
+	</div>
+	
+
+</body>
+</html>

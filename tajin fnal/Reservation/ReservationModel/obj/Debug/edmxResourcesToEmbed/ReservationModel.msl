@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReservationAppModelStoreContainer" CdmEntityContainer="ReservationAppEntities1">
+    <EntitySetMapping Name="Account">
+      <EntityTypeMapping TypeName="ReservationAppModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userTypeId" ColumnName="userTypeId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Business">
+      <EntityTypeMapping TypeName="ReservationAppModel.Business">
+        <MappingFragment StoreEntitySet="Business">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="bussinesName" ColumnName="bussinesName" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="syleId" ColumnName="syleId" />
+          <ScalarProperty Name="numSpaces" ColumnName="numSpaces" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="priceRangeId" ColumnName="priceRangeId" />
+          <ScalarProperty Name="directionId" ColumnName="directionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="ReservationAppModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="pLastName" ColumnName="pLastName" />
+          <ScalarProperty Name="mLastName" ColumnName="mLastName" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direction">
+      <EntityTypeMapping TypeName="ReservationAppModel.Direction">
+        <MappingFragment StoreEntitySet="Direction">
+          <ScalarProperty Name="directionId" ColumnName="directionId" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="colony" ColumnName="colony" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="postalCod" ColumnName="postalCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message">
+      <EntityTypeMapping TypeName="ReservationAppModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="messageId" ColumnName="messageId" />
+          <ScalarProperty Name="bUserId" ColumnName="bUserId" />
+          <ScalarProperty Name="messageText" ColumnName="messageText" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="cUserId" ColumnName="cUserId" />
+          <ScalarProperty Name="mDay" ColumnName="mDay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservation">
+      <EntityTypeMapping TypeName="ReservationAppModel.Reservation">
+        <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="reservationId" ColumnName="reservationId" />
+          <ScalarProperty Name="bUserId" ColumnName="bUserId" />
+          <ScalarProperty Name="cUserId" ColumnName="cUserId" />
+          <ScalarProperty Name="rDay" ColumnName="rDay" />
+          <ScalarProperty Name="rTime" ColumnName="rTime" />
+          <ScalarProperty Name="people" ColumnName="people" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Style">
+      <EntityTypeMapping TypeName="ReservationAppModel.Style">
+        <MappingFragment StoreEntitySet="Style">
+          <ScalarProperty Name="styleId" ColumnName="styleId" />
+          <ScalarProperty Name="style1" ColumnName="style" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ReservationAppModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

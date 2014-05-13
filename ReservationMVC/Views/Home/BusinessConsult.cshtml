@@ -1,0 +1,96 @@
+﻿@using ReservationModel;
+@model Business
+@{
+    ViewBag.Title = "UserBusiness";
+}
+
+<title>Reservaciones</title>
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='Link1'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+	<div id="navbar">
+		
+		<div id="navbar">
+		
+		<ul>
+		   <ul>
+            @if(ViewBag.Login==null){
+		<li><a href="@Url.Action("Login", "Cuentas")">Inicia Sesión</a></li>
+                <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+            }
+             @if (ViewBag.Login != null)
+             {
+                 <li><a href="@Url.Action("LogOut", "Cuentas")">LogOut</a></li>
+            <li><a href="@Url.Action("UserInformation", "Client")">Perfil</a></li>
+                 <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+                 
+             }</ul>
+		
+		
+		</ul>
+
+		</div>
+		
+	</div>
+
+ 
+	<div id="user">	
+	<article class="wrap">
+	
+	<aside>
+		<ul>
+	<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
+	<li><a href="@Url.Action("UserEdit", "Client")">Editar Información</a></li>
+	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>
+	
+		
+			
+		</ul>
+		
+	</aside>
+
+	
+	
+	<section>
+          
+	
+	  @using(Html.BeginForm())
+    {
+       <h3>Información de Negocio</h3>
+		
+	<ul>
+        <li hidden="true" >Nombre:</li>@Html.DisplayFor(model=>model.businessId)
+	<li >Nombre:</li>@Html.DisplayFor(model=>model.businessName)
+	<li>Descripción: </li>@Html.DisplayFor(model=>model.description)
+	<li>Dirección: </li>
+        <li>Ciudad: @Html.DisplayFor(model=>model.Direction.city)</li>
+        <li>Colonia: @Html.DisplayFor(model=>model.Direction.colony) </li>
+        <li>Calle: @Html.DisplayFor(model=>model.Direction.street) # @Html.DisplayFor(model=>model.Direction.number)</li>
+        <li>Codigo Postal: </li>@Html.DisplayFor(model=>model.Direction.postalCod)
+	<li>Cocina:</li>@Html.DisplayFor(model=>model.Style.style1)
+	<li>Número de Espacios:</li>@Html.DisplayFor(model=>model.numSpaces)
+	<li>Rango de Precios:</li>@Html.DisplayFor(model=>model.priceRange)
+	<li>Teléfono:</li>@Html.DisplayFor(model=>model.telephone)
+	<input type="submit" class="button" value="Reservar" />
+	</ul>
+   } 		
+	</section>
+	
+
+				
+	</article>
+	
+	
+	</div>
+	
+
+</body>
+</html>

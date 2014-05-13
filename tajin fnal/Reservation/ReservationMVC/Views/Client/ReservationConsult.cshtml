@@ -1,0 +1,87 @@
+﻿@using ReservationModel;
+@model Reservation
+@{
+    ViewBag.Title = "ReservationConsult";
+    List<Reservation> reservationList = ViewBag.ReservationsList;
+}
+
+<title>Reservaciones</title>
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+	<div id="navbar">
+		
+		<div id="navbar">
+		
+		<ul>
+            <li><a href="@Url.Action("LogOut", "Cuentas")">LogOut</a></li>
+			<li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+            
+		
+		
+		</ul>
+
+		</div>
+		
+	</div>
+
+ 
+	<div id="user">	
+	<article class="wrap">
+	
+	<aside>
+		<ul>
+	<li><a href="@Url.Action("UserInformation", "Client")">Usuario</a></li>		
+	<li><a href="@Url.Action("UserEdit", "Client")">Editar Información</a></li>
+	<li><a href="@Url.Action("ReservationConsult", "Client")">Consultar Reservaciones</a></li>
+	
+		
+			
+		</ul>
+		
+	</aside>
+
+	
+	
+	<section>
+	
+	<h3>Reservaciones</h3>
+		
+	 @foreach(Reservation reservation in reservationList){
+                 using(Html.BeginForm())
+                 {
+        @Html.HiddenFor(model => reservation.Business.businessId);
+      @Html.HiddenFor(model => reservation.Client.clientId);
+        @Html.HiddenFor(model => reservation.reservationId);
+		<h5><a href="#">Negocio:@Html.DisplayFor(model=>reservation.Business.businessName)</a></h5>
+		<a href="#">Tipo de comida: @Html.DisplayFor(model=>reservation.Business.Style.style1) </a>
+		<p>Descripcion:@Html.DisplayFor(model=>reservation.Business.description)</p>
+		<p>Teléfono:@Html.DisplayFor(model=>reservation.Business.telephone)</p>
+      <h3>Informacion de la reservacion</h3>
+        <p>Dia: @Html.DisplayFor(model=>reservation.rDay)</p>
+      <p>hora:: @Html.DisplayFor(model=>reservation.rTime)</p>
+      <p>numero de personas: @Html.DisplayFor(model=>reservation.people)</p>
+		<input type="submit" class="button" value="Eliminar" />
+                 }
+                 }
+		
+	</section>
+	
+
+				
+	</article>
+	
+	
+	</div>
+	
+
+</body>
+</html>

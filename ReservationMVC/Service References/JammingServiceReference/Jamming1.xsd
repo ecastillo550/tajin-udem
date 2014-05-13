@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Jammming.ModelClas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Jammming.ModelClas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:34052/Jamming.Consulta.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfArtist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Artist" nillable="true" type="tns:Artist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArtist" nillable="true" type="tns:ArrayOfArtist" />
+  <xs:complexType name="Artist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="ArtistInstrument" nillable="true" type="tns:ArrayOfArtistInstrument" />
+      <xs:element minOccurs="0" name="accountId" type="xs:int" />
+      <xs:element minOccurs="0" name="artistGroup" nillable="true" type="tns:ArrayOfartistGroup" />
+      <xs:element minOccurs="0" name="artistId" type="xs:int" />
+      <xs:element minOccurs="0" name="becomeAnArtistDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="currentLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="picture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Artist" nillable="true" type="tns:Artist" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="Artist1" nillable="true" type="tns:ArrayOfArtist" />
+      <xs:element minOccurs="0" name="BusinessOwner" nillable="true" type="tns:ArrayOfBusinessOwner" />
+      <xs:element minOccurs="0" name="FacebookAccount1" nillable="true" type="tns:ArrayOfFacebookAccount" />
+      <xs:element minOccurs="0" name="Fan1" nillable="true" type="tns:ArrayOfFan" />
+      <xs:element minOccurs="0" name="LocalManager" nillable="true" type="tns:ArrayOfLocalManager" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="tns:ArrayOfTelephone" />
+      <xs:element minOccurs="0" name="accountId" type="xs:int" />
+      <xs:element minOccurs="0" name="addressId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="artist" type="xs:boolean" />
+      <xs:element minOccurs="0" name="birthDay" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="facebookAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fan" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastConnection" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="manager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="photoUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="registerDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:ArrayOfAccount" />
+      <xs:element minOccurs="0" name="BusinessLocal" nillable="true" type="tns:ArrayOfBusinessLocal" />
+      <xs:element minOccurs="0" name="Cat_entidad" nillable="true" type="tns:Cat_entidad" />
+      <xs:element minOccurs="0" name="Cat_mpo" nillable="true" type="tns:Cat_mpo" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:ArrayOfEvent" />
+      <xs:element minOccurs="0" name="adressId" type="xs:int" />
+      <xs:element minOccurs="0" name="city" type="xs:int" />
+      <xs:element minOccurs="0" name="colony" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="extraInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="state" type="xs:int" />
+      <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ArrayOfAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Account" nillable="true" type="tns:Account" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccount" nillable="true" type="tns:ArrayOfAccount" />
+  <xs:complexType name="ArrayOfBusinessLocal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessLocal" nillable="true" type="tns:BusinessLocal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessLocal" nillable="true" type="tns:ArrayOfBusinessLocal" />
+  <xs:complexType name="BusinessLocal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="Availability" nillable="true" type="tns:ArrayOfAvailability" />
+      <xs:element minOccurs="0" name="Business" nillable="true" type="tns:Business" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:ArrayOfEvent" />
+      <xs:element minOccurs="0" name="FanBar" nillable="true" type="tns:ArrayOfFanBar" />
+      <xs:element minOccurs="0" name="LocalManager" nillable="true" type="tns:LocalManager" />
+      <xs:element minOccurs="0" name="addressId" type="xs:int" />
+      <xs:element minOccurs="0" name="businessId" type="xs:int" />
+      <xs:element minOccurs="0" name="localId" type="xs:int" />
+      <xs:element minOccurs="0" name="mainLocal" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="managerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="photoUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessLocal" nillable="true" type="tns:BusinessLocal" />
+  <xs:complexType name="ArrayOfAvailability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Availability" nillable="true" type="tns:Availability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvailability" nillable="true" type="tns:ArrayOfAvailability" />
+  <xs:complexType name="Availability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessLocal" nillable="true" type="tns:BusinessLocal" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="availabilityId" type="xs:int" />
+      <xs:element minOccurs="0" name="businesstLocalId" type="xs:int" />
+      <xs:element minOccurs="0" name="day" type="xs:int" />
+      <xs:element minOccurs="0" name="endHour" type="ser:duration" />
+      <xs:element minOccurs="0" name="startHour" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Availability" nillable="true" type="tns:Availability" />
+  <xs:complexType name="Groups">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Album" nillable="true" type="tns:ArrayOfAlbum" />
+      <xs:element minOccurs="0" name="Availability" nillable="true" type="tns:ArrayOfAvailability" />
+      <xs:element minOccurs="0" name="Deal" nillable="true" type="tns:ArrayOfDeal" />
+      <xs:element minOccurs="0" name="FanGroup" nillable="true" type="tns:ArrayOfFanGroup" />
+      <xs:element minOccurs="0" name="GroupComponent" nillable="true" type="tns:ArrayOfGroupComponent" />
+      <xs:element minOccurs="0" name="GroupGenre" nillable="true" type="tns:ArrayOfGroupGenre" />
+      <xs:element minOccurs="0" name="Raider1" nillable="true" type="tns:ArrayOfRaider" />
+      <xs:element minOccurs="0" name="Requirements" nillable="true" type="tns:ArrayOfRequirements" />
+      <xs:element minOccurs="0" name="Reward" nillable="true" type="tns:ArrayOfReward" />
+      <xs:element minOccurs="0" name="UserNetwork" nillable="true" type="tns:ArrayOfUserNetwork" />
+      <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="artistGroup" nillable="true" type="tns:ArrayOfartistGroup" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="groupId" type="xs:int" />
+      <xs:element minOccurs="0" name="logoUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="raider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Groups" nillable="true" type="tns:Groups" />
+  <xs:complexType name="ArrayOfAlbum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Album" nillable="true" type="tns:Album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlbum" nillable="true" type="tns:ArrayOfAlbum" />
+  <xs:complexType name="Album">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="albumCoverUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="albumId" type="xs:int" />
+      <xs:element minOccurs="0" name="albumName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="appleStoreLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="groupId" type="xs:int" />
+      <xs:element minOccurs="0" name="releaseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="singleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Album" nillable="true" type="tns:Album" />
+  <xs:complexType name="ArrayOfDeal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Deal" nillable="true" type="tns:Deal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeal" nillable="true" type="tns:ArrayOfDeal" />
+  <xs:complexType name="Deal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:Event" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="Requirements" nillable="true" type="tns:ArrayOfRequirements" />
+      <xs:element minOccurs="0" name="accountIdG" type="xs:int" />
+      <xs:element minOccurs="0" name="dateDeal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dealId" type="xs:int" />
+      <xs:element minOccurs="0" name="endTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="eventId" type="xs:int" />
+      <xs:element minOccurs="0" name="information" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="startTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="visibleDeal" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Deal" nillable="true" type="tns:Deal" />
+  <xs:complexType name="Event">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="BusinessLocal" nillable="true" type="tns:BusinessLocal" />
+      <xs:element minOccurs="0" name="Deal" nillable="true" type="tns:ArrayOfDeal" />
+      <xs:element minOccurs="0" name="EventGenere" nillable="true" type="tns:ArrayOfEventGenere" />
+      <xs:element minOccurs="0" name="businessLocalId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dateEvent" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="directionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="endTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="eventId" type="xs:int" />
+      <xs:element minOccurs="0" name="startTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Event" nillable="true" type="tns:Event" />
+  <xs:complexType name="ArrayOfEventGenere">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventGenere" nillable="true" type="tns:EventGenere" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventGenere" nillable="true" type="tns:ArrayOfEventGenere" />
+  <xs:complexType name="EventGenere">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:Event" />
+      <xs:element minOccurs="0" name="Genre" nillable="true" type="tns:Genre" />
+      <xs:element minOccurs="0" name="eventGenereId" type="xs:int" />
+      <xs:element minOccurs="0" name="eventId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="genereId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventGenere" nillable="true" type="tns:EventGenere" />
+  <xs:complexType name="Genre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventGenere" nillable="true" type="tns:ArrayOfEventGenere" />
+      <xs:element minOccurs="0" name="GroupGenre" nillable="true" type="tns:ArrayOfGroupGenre" />
+      <xs:element minOccurs="0" name="genreId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Genre" nillable="true" type="tns:Genre" />
+  <xs:complexType name="ArrayOfGroupGenre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupGenre" nillable="true" type="tns:GroupGenre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupGenre" nillable="true" type="tns:ArrayOfGroupGenre" />
+  <xs:complexType name="GroupGenre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Genre" nillable="true" type="tns:Genre" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="genreId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="groupGenreId" type="xs:int" />
+      <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupGenre" nillable="true" type="tns:GroupGenre" />
+  <xs:complexType name="ArrayOfRequirements">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Requirements" nillable="true" type="tns:Requirements" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequirements" nillable="true" type="tns:ArrayOfRequirements" />
+  <xs:complexType name="Requirements">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Deal" nillable="true" type="tns:Deal" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="TradeItem" nillable="true" type="tns:TradeItem" />
+      <xs:element minOccurs="0" name="amount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="dealId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="grouptId" type="xs:int" />
+      <xs:element minOccurs="0" name="requirementsId" type="xs:int" />
+      <xs:element minOccurs="0" name="tradeItemId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Requirements" nillable="true" type="tns:Requirements" />
+  <xs:complexType name="TradeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="tns:Currency" />
+      <xs:element minOccurs="0" name="Requirements" nillable="true" type="tns:ArrayOfRequirements" />
+      <xs:element minOccurs="0" name="amount" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="currencyTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="extra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tradeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradeItem" nillable="true" type="tns:TradeItem" />
+  <xs:complexType name="Currency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TradeItem" nillable="true" type="tns:ArrayOfTradeItem" />
+      <xs:element minOccurs="0" name="currencyId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Currency" nillable="true" type="tns:Currency" />
+  <xs:complexType name="ArrayOfTradeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TradeItem" nillable="true" type="tns:TradeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTradeItem" nillable="true" type="tns:ArrayOfTradeItem" />
+  <xs:complexType name="ArrayOfFanGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FanGroup" nillable="true" type="tns:FanGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFanGroup" nillable="true" type="tns:ArrayOfFanGroup" />
+  <xs:complexType name="FanGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fan" nillable="true" type="tns:Fan" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="fanId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="followGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FanGroup" nillable="true" type="tns:FanGroup" />
+  <xs:complexType name="Fan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="FanBar" nillable="true" type="tns:ArrayOfFanBar" />
+      <xs:element minOccurs="0" name="FanGroup" nillable="true" type="tns:ArrayOfFanGroup" />
+      <xs:element minOccurs="0" name="FanId" type="xs:int" />
+      <xs:element minOccurs="0" name="accountId" type="xs:int" />
+      <xs:element minOccurs="0" name="profilePicture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sex" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fan" nillable="true" type="tns:Fan" />
+  <xs:complexType name="ArrayOfFanBar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FanBar" nillable="true" type="tns:FanBar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFanBar" nillable="true" type="tns:ArrayOfFanBar" />
+  <xs:complexType name="FanBar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessLocal" nillable="true" type="tns:BusinessLocal" />
+      <xs:element minOccurs="0" name="Fan" nillable="true" type="tns:Fan" />
+      <xs:element minOccurs="0" name="barId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fanBarId" type="xs:int" />
+      <xs:element minOccurs="0" name="fanId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FanBar" nillable="true" type="tns:FanBar" />
+  <xs:complexType name="ArrayOfGroupComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupComponent" nillable="true" type="tns:GroupComponent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupComponent" nillable="true" type="tns:ArrayOfGroupComponent" />
+  <xs:complexType name="GroupComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentId" type="xs:int" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="backLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="component" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="intputList" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupComponent" nillable="true" type="tns:GroupComponent" />
+  <xs:complexType name="ArrayOfRaider">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Raider" nillable="true" type="tns:Raider" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRaider" nillable="true" type="tns:ArrayOfRaider" />
+  <xs:complexType name="Raider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="accountId" type="xs:int" />
+      <xs:element minOccurs="0" name="fileDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="raiderId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Raider" nillable="true" type="tns:Raider" />
+  <xs:complexType name="ArrayOfReward">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reward" nillable="true" type="tns:Reward" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReward" nillable="true" type="tns:ArrayOfReward" />
+  <xs:complexType name="Reward">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="reward1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rewardId" type="xs:int" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reward" nillable="true" type="tns:Reward" />
+  <xs:complexType name="ArrayOfUserNetwork">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserNetwork" nillable="true" type="tns:UserNetwork" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserNetwork" nillable="true" type="tns:ArrayOfUserNetwork" />
+  <xs:complexType name="UserNetwork">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="SocialNetwork" nillable="true" type="tns:SocialNetwork" />
+      <xs:element minOccurs="0" name="acountId" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idSocial" type="xs:int" />
+      <xs:element minOccurs="0" name="idUserNetwork" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserNetwork" nillable="true" type="tns:UserNetwork" />
+  <xs:complexType name="SocialNetwork">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserNetwork" nillable="true" type="tns:ArrayOfUserNetwork" />
+      <xs:element minOccurs="0" name="idNetwork" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SocialNetwork" nillable="true" type="tns:SocialNetwork" />
+  <xs:complexType name="ArrayOfartistGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="artistGroup" nillable="true" type="tns:artistGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfartistGroup" nillable="true" type="tns:ArrayOfartistGroup" />
+  <xs:complexType name="artistGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Artist" nillable="true" type="tns:Artist" />
+      <xs:element minOccurs="0" name="ArtistInstrument" nillable="true" type="tns:ArtistInstrument" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:Groups" />
+      <xs:element minOccurs="0" name="artistGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="artistId" type="xs:int" />
+      <xs:element minOccurs="0" name="artistInstrumentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="groupId" type="xs:int" />
+      <xs:element minOccurs="0" name="input" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="output" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="artistGroup" nillable="true" type="tns:artistGroup" />
+  <xs:complexType name="ArtistInstrument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Artist" nillable="true" type="tns:Artist" />
+      <xs:element minOccurs="0" name="Instrument" nillable="true" type="tns:Instrument" />
+      <xs:element minOccurs="0" name="artistGroup" nillable="true" type="tns:ArrayOfartistGroup" />
+      <xs:element minOccurs="0" name="artistId" type="xs:int" />
+      <xs:element minOccurs="0" name="backLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idAI" type="xs:int" />
+      <xs:element minOccurs="0" name="inputList" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArtistInstrument" nillable="true" type="tns:ArtistInstrument" />
+  <xs:complexType name="Instrument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArtistInstrument" nillable="true" type="tns:ArtistInstrument" />
+      <xs:element minOccurs="0" name="InstrumentType" nillable="true" type="tns:InstrumentType" />
+      <xs:element minOccurs="0" name="instrumentId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="typeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Instrument" nillable="true" type="tns:Instrument" />
+  <xs:complexType name="InstrumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Instrument" nillable="true" type="tns:ArrayOfInstrument" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstrumentType" nillable="true" type="tns:InstrumentType" />
+  <xs:complexType name="ArrayOfInstrument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Instrument" nillable="true" type="tns:Instrument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstrument" nillable="true" type="tns:ArrayOfInstrument" />
+  <xs:complexType name="Business">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessLocal" nillable="true" type="tns:ArrayOfBusinessLocal" />
+      <xs:element minOccurs="0" name="BusinessOwnerRelation" nillable="true" type="tns:ArrayOfBusinessOwnerRelation" />
+      <xs:element minOccurs="0" name="businessId" type="xs:int" />
+      <xs:element minOccurs="0" name="businessName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Business" nillable="true" type="tns:Business" />
+  <xs:complexType name="ArrayOfBusinessOwnerRelation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessOwnerRelation" nillable="true" type="tns:BusinessOwnerRelation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessOwnerRelation" nillable="true" type="tns:ArrayOfBusinessOwnerRelation" />
+  <xs:complexType name="BusinessOwnerRelation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Business" nillable="true" type="tns:Business" />
+      <xs:element minOccurs="0" name="BusinessOwner" nillable="true" type="tns:BusinessOwner" />
+      <xs:element minOccurs="0" name="businessId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ownerBusinessId" type="xs:int" />
+      <xs:element minOccurs="0" name="ownerId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessOwnerRelation" nillable="true" type="tns:BusinessOwnerRelation" />
+  <xs:complexType name="BusinessOwner">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="BusinessOwnerRelation" nillable="true" type="tns:ArrayOfBusinessOwnerRelation" />
+      <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="businessId" type="xs:int" />
+      <xs:element minOccurs="0" name="ownerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessOwner" nillable="true" type="tns:BusinessOwner" />
+  <xs:complexType name="ArrayOfEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Event" nillable="true" type="tns:Event" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEvent" nillable="true" type="tns:ArrayOfEvent" />
+  <xs:complexType name="LocalManager">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="BusinessLocal" nillable="true" type="tns:ArrayOfBusinessLocal" />
+      <xs:element minOccurs="0" name="accountId" type="xs:int" />
+      <xs:element minOccurs="0" name="localManagerId" type="xs:int" />
+      <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocalManager" nillable="true" type="tns:LocalManager" />
+  <xs:complexType name="Cat_entidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="ClaveEntidadres" type="xs:int" />
+      <xs:element minOccurs="0" name="DescEntidadres" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cat_entidad" nillable="true" type="tns:Cat_entidad" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="Cat_mpo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="Descrip_MPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EDOmpo" type="xs:int" />
+      <xs:element minOccurs="0" name="MPOmpo" type="xs:int" />
+      <xs:element minOccurs="0" name="municipioId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cat_mpo" nillable="true" type="tns:Cat_mpo" />
+  <xs:complexType name="ArrayOfBusinessOwner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessOwner" nillable="true" type="tns:BusinessOwner" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessOwner" nillable="true" type="tns:ArrayOfBusinessOwner" />
+  <xs:complexType name="ArrayOfFacebookAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FacebookAccount" nillable="true" type="tns:FacebookAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacebookAccount" nillable="true" type="tns:ArrayOfFacebookAccount" />
+  <xs:complexType name="FacebookAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="accountId" type="xs:int" />
+      <xs:element minOccurs="0" name="faceAccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="facebookId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacebookAccount" nillable="true" type="tns:FacebookAccount" />
+  <xs:complexType name="ArrayOfFan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Fan" nillable="true" type="tns:Fan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFan" nillable="true" type="tns:ArrayOfFan" />
+  <xs:complexType name="ArrayOfLocalManager">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocalManager" nillable="true" type="tns:LocalManager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalManager" nillable="true" type="tns:ArrayOfLocalManager" />
+  <xs:complexType name="ArrayOfTelephone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telephone" nillable="true" type="tns:Telephone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelephone" nillable="true" type="tns:ArrayOfTelephone" />
+  <xs:complexType name="Telephone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+      <xs:element minOccurs="0" name="accountId" type="xs:int" />
+      <xs:element minOccurs="0" name="number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telephoneId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Telephone" nillable="true" type="tns:Telephone" />
+  <xs:complexType name="ArrayOfArtistInstrument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArtistInstrument" nillable="true" type="tns:ArtistInstrument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArtistInstrument" nillable="true" type="tns:ArrayOfArtistInstrument" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="location1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="locationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="ArrayOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Business" nillable="true" type="tns:Business" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusiness" nillable="true" type="tns:ArrayOfBusiness" />
+  <xs:complexType name="ArrayOfCat_mpo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cat_mpo" nillable="true" type="tns:Cat_mpo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCat_mpo" nillable="true" type="tns:ArrayOfCat_mpo" />
+  <xs:complexType name="ArrayOfCat_entidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cat_entidad" nillable="true" type="tns:Cat_entidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCat_entidad" nillable="true" type="tns:ArrayOfCat_entidad" />
+  <xs:complexType name="ArrayOfGenre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Genre" nillable="true" type="tns:Genre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenre" nillable="true" type="tns:ArrayOfGenre" />
+  <xs:complexType name="ArrayOfGroups">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Groups" nillable="true" type="tns:Groups" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroups" nillable="true" type="tns:ArrayOfGroups" />
+</xs:schema>

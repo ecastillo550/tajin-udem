@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c70e87c4-edee-4f90-8820-3f77285f5afa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:34052/Jamming.Consulta.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Jamming.xsd" MetadataType="Schema" ID="efc96b4e-2d38-439e-a063-35298af9877d" SourceId="1" SourceUrl="http://localhost:34052/Jamming.Consulta.svc?xsd=xsd1" />
+    <MetadataFile FileName="Jamming.disco" MetadataType="Disco" ID="1c7de5b5-4fff-4d4a-9f93-df0248607d43" SourceId="1" SourceUrl="http://localhost:34052/Jamming.Consulta.svc?disco" />
+    <MetadataFile FileName="Jamming.wsdl" MetadataType="Wsdl" ID="59a060ef-6d20-4fa5-8dee-b163337c8e42" SourceId="1" SourceUrl="http://localhost:34052/Jamming.Consulta.svc?wsdl" />
+    <MetadataFile FileName="Jamming1.xsd" MetadataType="Schema" ID="4ccd51b0-871a-4dce-85ac-364f2abb4689" SourceId="1" SourceUrl="http://localhost:34052/Jamming.Consulta.svc?xsd=xsd2" />
+    <MetadataFile FileName="Jamming2.xsd" MetadataType="Schema" ID="065103f5-e96f-40c7-a7a3-a994d8b07716" SourceId="1" SourceUrl="http://localhost:34052/Jamming.Consulta.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

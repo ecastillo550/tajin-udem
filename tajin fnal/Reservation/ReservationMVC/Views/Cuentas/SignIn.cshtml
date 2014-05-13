@@ -1,0 +1,59 @@
+﻿@using ReservationModel;
+@model Client
+@{
+    ViewBag.Title = "SignIn";
+}
+
+<title>Reservaciones</title>
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+ 
+	<div id="content" >
+	
+	<form class="Form search" role="form" action="@Url.Action("SignIn", "Cuentas")" method="post">
+	
+		
+		<h3>Registro</h3>
+		<hr>
+		
+		<ul>
+		
+		Nombre de Cuenta: <li><input type="text" name="userName"></li>
+		Contraseña<li><input type="password" name="password"></li>
+		Correo Electrónico: <li><input type="text" name="mail"></li><br>
+		Tipo de Cliente:<li>
+		
+		<select name="typeOption">
+		  <option name="userTypeId" value="business">Negocio</option>
+		  <option name="userTypeId" value="client">Cliente</option>
+		</select>
+		</li>
+		
+		
+		</ul>
+
+		<br><input class="button" type="submit" value="Registrar" >
+		
+		
+   
+	
+		</form>
+		
+	
+			
+	</div>
+	
+	
+	
+	
+
+</body>
+</html>

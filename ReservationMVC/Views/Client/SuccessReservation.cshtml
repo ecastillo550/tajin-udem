@@ -1,0 +1,39 @@
+﻿@using ReservationModel;
+@model Account
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<title>Reservaciones</title>
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+ <span class="logo">Reservación</span>
+
+		
+	<div id="content" >
+	<br />
+        <br />
+        <br />
+        <br />
+	<form class="Form search" role="form" action="@Url.Action("Index", "Home")" method="get">
+		<h1>Se realizo la reservacion satisfactoriamente</h1>
+        <li><input class="button" type="submit" value="Inicio" ></li>
+		<hr>
+		
+       
+           
+	</form>
+	
+			
+	</div>
+	
+
+</body>
+</html>

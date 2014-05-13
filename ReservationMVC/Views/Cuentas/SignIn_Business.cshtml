@@ -1,0 +1,81 @@
+﻿@using ReservationModel;
+@model Business
+
+
+
+<title>Reservaciones</title>
+
+<link rel='stylesheet' id='style-css'  href='~/Content/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='~/Content/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<span class="logo">Reservación</span>
+
+ 
+	<div id="content" >
+	
+	<form class="FormSignIn" role="form" action="@Url.Action("BusinessConsult", "Home")" method="post">
+	
+		
+		
+		
+            @using(Html.BeginForm())
+    {
+                
+                <h3>Registro de Negocio</h3>
+		<hr>
+
+		<ul>
+		
+		Nombre de Negocio: <li>@Html.EditorFor(model=>model.businessName)</li>
+		Teléfono: <li>@Html.EditorFor(model=>model.telephone)</li>
+		Descripción: <li>@Html.EditorFor(model=>model.description)</li><br>
+		Calle: <li>@Html.EditorFor(model=>model.Direction.street)</li>
+		Colonia: <li>@Html.EditorFor(model=>model.Direction.colony)</li>
+		Ciudad: <li>@Html.EditorFor(model=>model.Direction.city)</li>
+		Número: <li>@Html.EditorFor(model=>model.Direction.number)</li>
+		Código Postal: <li>@Html.EditorFor(model=>model.Direction.postalCod)</li>
+            <br />
+            Número de Espacios: <li>@Html.EditorFor(model=>model.numSpaces)</li>
+		   Correo Electrónico: <li>@Html.EditorFor(model=>model.mail)</li>
+		    Rango de Precio: <li>
+                  @Html.DropDownListFor(model => model.priceRange,new SelectList(ViewBag.priceList),"Seleccione uno")
+                <br />
+		
+                Tipo de Cocina:<li>                     </li>
+       </li>		
+		
+        </ul>
+            @Html.DropDownListFor(model => model.syleId,new SelectList(ViewBag.StyleList,"styleId","style1"),"Seleccione uno")
+            
+            <br>
+                
+            <p>
+        <input type="submit" class="button" value="Guardar" />
+         </p>
+            }
+        <ul>
+		
+		
+		
+			
+		
+		</ul>
+
+		<br><input class="button" type="submit" value="Registrar Negocio" >	
+		</form>
+		
+	
+			
+	</div>
+	
+	
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-ES">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Reservaciones</title>
+<link rel='stylesheet' id='style-css'  href='css/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='css/style.css' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allan:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<span class="logo">Reservación</span>
+	<div id="content" >
+	<form class="Form signIn" >
+		<h3>Registro de Negocio</h3>
+		<hr>
+		<ul>
+		Nombre de Negocio: <li><input type="text" name="businessName"></li><br />
+		Teléfono: <li><input type="text" name="telephone"></li><br />
+		Descripción: <li><textarea cols="30" rows="4" name="description"></textarea></li><br>
+		Calle: <li><input type="text" name="street"></li><br />
+		Colonia: <li><input type="text" name="colony"></li><br />
+		Ciudad: <li><input type="text" name="city"></li><br />
+		Número: <li><input type="text" name="number"></li><br />
+		Código Postal: <li><input type="text" name="postalCod"></li><br />
+		Tipo de Cocina:<li><br />
+		<select>
+		  <option name="styleId" value="business">Mexicana</option>
+		  <option name="styleId" value="client">Italiana</option>
+		</select><br />
+		</li>		Número de Espacios: <li><input type="text" name="numSpaces"></li><br />
+		Correo Electrónico: <li><input type="text" name="mail"></li><br />
+		Rango de Precio: <li><input type="text" name="priceRangeId"></li><br>		
+		</ul>
+		<br><input class="button" type="submit" value="Registrar Negocio" >
+		</form>			
+	</div>
+</body>
+</html>

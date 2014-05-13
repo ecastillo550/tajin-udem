@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Jamming" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:34052/Jamming.Consulta.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:34052/Jamming.Consulta.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:34052/Jamming.Consulta.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Jammming.ModelClas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IJamming_RemoveAProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAProject" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_RemoveAProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGroupMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupMembers" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGroupMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_DeleteGroupGener_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupGener" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_DeleteGroupGener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupGenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGroupAlbums_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupAlbums" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGroupAlbums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupAlbumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccount" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_DeleteAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccount" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_DeleteAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_ReActiveAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReActiveAccount" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_ReActiveAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReActiveAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAccountFan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountFan" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAccountFan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountFanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditFan_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditFan" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditFan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditFanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAccountArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountArtist" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAccountArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditArtist" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateLocalManager_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLocalManager" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateLocalManager_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLocalManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditLocalManager_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditLocalManager" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditLocalManager_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditLocalManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateBusinessOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBusinessOwner" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateBusinessOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBusinessOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditBusinessOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBusinessOwner" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditBusinessOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBusinessOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateBusinessLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBusinessLocal" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateBusinessLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBusinessLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAddress" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditAddress" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEvent" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditEvent" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGenre" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditGenre" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateInstrumentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInstrumentType" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateInstrumentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInstrumentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateInstrument_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInstrument" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateInstrument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInstrumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditInstrument_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditInstrument" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditInstrument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditInstrumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLocation" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateSocialNetwork_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSocialNetwork" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateSocialNetwork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSocialNetworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateUserNetwork_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserNetwork" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateUserNetwork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserNetworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateRaider_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRaider" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateRaider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRaiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGroupComponent_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroupComponent" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGroupComponent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroupComponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditGroupComponent_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroupComponent" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditGroupComponent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroupComponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateRequirements_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRequirements" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateRequirements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRequirementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditRequirements_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditRequirements" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditRequirements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditRequirementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateTradeItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTradeItem" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateTradeItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTradeItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditTradeItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditTradeItem" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditTradeItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditTradeItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateCurrency_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCurrency" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateCurrency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGroupGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroupGenre" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGroupGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroupGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditGroupGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroupGenre" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditGroupGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroupGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroup" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllArtist" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllCitys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCitys" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllCitys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCitysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStates" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CheckFacebookAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckFacebookAccount" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CheckFacebookAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckFacebookAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_LinkFacebookAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkFacebookAccount" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_LinkFacebookAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkFacebookAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAccountFromFacebookId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountFromFacebookId" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAccountFromFacebookId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountFromFacebookIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGenre" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGroupGenere_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupGenere" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAllGroupGenere_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupGenereResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_LinkArtistGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkArtistGroup" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_LinkArtistGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkArtistGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetGroupNonGenders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupNonGenders" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetGroupNonGenders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupNonGendersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtist" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenre" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_getAllInstrument_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllInstrument" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_getAllInstrument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllInstrumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateArtistInsturment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateArtistInsturment" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateArtistInsturment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateArtistInsturmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditArtistInstrument_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditArtistInstrument" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditArtistInstrument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditArtistInstrumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_SignIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_SignIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditAccountLastConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditAccountLastConnection" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditAccountLastConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditAccountLastConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccount" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistGenre" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistGroups" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistAlbums_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistAlbums" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistAlbums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistAlbumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetInstrument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstrument" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetInstrument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstrumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistInstruments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistInstruments" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_GetArtistInstruments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistInstrumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAProject" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_CreateAProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_LinkProjectArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkProjectArtist" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_LinkProjectArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkProjectArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditProjectArtistInstrument_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditProjectArtistInstrument" />
+  </wsdl:message>
+  <wsdl:message name="IJamming_EditProjectArtistInstrument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditProjectArtistInstrumentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IJamming">
+    <wsdl:operation name="RemoveAProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/RemoveAProject" message="tns:IJamming_RemoveAProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/RemoveAProjectResponse" message="tns:IJamming_RemoveAProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupMembers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllGroupMembers" message="tns:IJamming_GetAllGroupMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllGroupMembersResponse" message="tns:IJamming_GetAllGroupMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroupGener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/DeleteGroupGener" message="tns:IJamming_DeleteGroupGener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/DeleteGroupGenerResponse" message="tns:IJamming_DeleteGroupGener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditAlbum" message="tns:IJamming_EditAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditAlbumResponse" message="tns:IJamming_EditAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateAlbum" message="tns:IJamming_CreateAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateAlbumResponse" message="tns:IJamming_CreateAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupAlbums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllGroupAlbums" message="tns:IJamming_GetAllGroupAlbums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllGroupAlbumsResponse" message="tns:IJamming_GetAllGroupAlbums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateAccount" message="tns:IJamming_CreateAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateAccountResponse" message="tns:IJamming_CreateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/DeleteAccount" message="tns:IJamming_DeleteAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/DeleteAccountResponse" message="tns:IJamming_DeleteAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReActiveAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/ReActiveAccount" message="tns:IJamming_ReActiveAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/ReActiveAccountResponse" message="tns:IJamming_ReActiveAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountFan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateAccountFan" message="tns:IJamming_CreateAccountFan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateAccountFanResponse" message="tns:IJamming_CreateAccountFan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditFan" message="tns:IJamming_EditFan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditFanResponse" message="tns:IJamming_EditFan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateAccountArtist" message="tns:IJamming_CreateAccountArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateAccountArtistResponse" message="tns:IJamming_CreateAccountArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditArtist" message="tns:IJamming_EditArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditArtistResponse" message="tns:IJamming_EditArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLocalManager">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateLocalManager" message="tns:IJamming_CreateLocalManager_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateLocalManagerResponse" message="tns:IJamming_CreateLocalManager_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLocalManager">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditLocalManager" message="tns:IJamming_EditLocalManager_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditLocalManagerResponse" message="tns:IJamming_EditLocalManager_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBusinessOwner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateBusinessOwner" message="tns:IJamming_CreateBusinessOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateBusinessOwnerResponse" message="tns:IJamming_CreateBusinessOwner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBusinessOwner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditBusinessOwner" message="tns:IJamming_EditBusinessOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditBusinessOwnerResponse" message="tns:IJamming_EditBusinessOwner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateBusiness" message="tns:IJamming_CreateBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateBusinessResponse" message="tns:IJamming_CreateBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditBusiness" message="tns:IJamming_EditBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditBusinessResponse" message="tns:IJamming_EditBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBusinessLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateBusinessLocal" message="tns:IJamming_CreateBusinessLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateBusinessLocalResponse" message="tns:IJamming_CreateBusinessLocal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateAddress" message="tns:IJamming_CreateAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateAddressResponse" message="tns:IJamming_CreateAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditAddress" message="tns:IJamming_EditAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditAddressResponse" message="tns:IJamming_EditAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateEvent" message="tns:IJamming_CreateEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateEventResponse" message="tns:IJamming_CreateEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditEvent" message="tns:IJamming_EditEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditEventResponse" message="tns:IJamming_EditEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateGenre" message="tns:IJamming_CreateGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateGenreResponse" message="tns:IJamming_CreateGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditGenre" message="tns:IJamming_EditGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditGenreResponse" message="tns:IJamming_EditGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInstrumentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateInstrumentType" message="tns:IJamming_CreateInstrumentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateInstrumentTypeResponse" message="tns:IJamming_CreateInstrumentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInstrument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateInstrument" message="tns:IJamming_CreateInstrument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateInstrumentResponse" message="tns:IJamming_CreateInstrument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditInstrument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditInstrument" message="tns:IJamming_EditInstrument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditInstrumentResponse" message="tns:IJamming_EditInstrument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateLocation" message="tns:IJamming_CreateLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateLocationResponse" message="tns:IJamming_CreateLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSocialNetwork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateSocialNetwork" message="tns:IJamming_CreateSocialNetwork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateSocialNetworkResponse" message="tns:IJamming_CreateSocialNetwork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserNetwork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateUserNetwork" message="tns:IJamming_CreateUserNetwork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateUserNetworkResponse" message="tns:IJamming_CreateUserNetwork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRaider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateRaider" message="tns:IJamming_CreateRaider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateRaiderResponse" message="tns:IJamming_CreateRaider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroupComponent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateGroupComponent" message="tns:IJamming_CreateGroupComponent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateGroupComponentResponse" message="tns:IJamming_CreateGroupComponent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditGroupComponent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditGroupComponent" message="tns:IJamming_EditGroupComponent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditGroupComponentResponse" message="tns:IJamming_EditGroupComponent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequirements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateRequirements" message="tns:IJamming_CreateRequirements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateRequirementsResponse" message="tns:IJamming_CreateRequirements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditRequirements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditRequirements" message="tns:IJamming_EditRequirements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditRequirementsResponse" message="tns:IJamming_EditRequirements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTradeItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateTradeItem" message="tns:IJamming_CreateTradeItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateTradeItemResponse" message="tns:IJamming_CreateTradeItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditTradeItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditTradeItem" message="tns:IJamming_EditTradeItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditTradeItemResponse" message="tns:IJamming_EditTradeItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCurrency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateCurrency" message="tns:IJamming_CreateCurrency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateCurrencyResponse" message="tns:IJamming_CreateCurrency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroupGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateGroupGenre" message="tns:IJamming_CreateGroupGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateGroupGenreResponse" message="tns:IJamming_CreateGroupGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditGroupGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditGroupGenre" message="tns:IJamming_EditGroupGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditGroupGenreResponse" message="tns:IJamming_EditGroupGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateGroup" message="tns:IJamming_CreateGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateGroupResponse" message="tns:IJamming_CreateGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllBusiness" message="tns:IJamming_GetAllBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllBusinessResponse" message="tns:IJamming_GetAllBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllArtist" message="tns:IJamming_GetAllArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllArtistResponse" message="tns:IJamming_GetAllArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCitys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllCitys" message="tns:IJamming_GetAllCitys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllCitysResponse" message="tns:IJamming_GetAllCitys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllStates" message="tns:IJamming_GetAllStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllStatesResponse" message="tns:IJamming_GetAllStates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFacebookAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CheckFacebookAccount" message="tns:IJamming_CheckFacebookAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CheckFacebookAccountResponse" message="tns:IJamming_CheckFacebookAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkFacebookAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/LinkFacebookAccount" message="tns:IJamming_LinkFacebookAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/LinkFacebookAccountResponse" message="tns:IJamming_LinkFacebookAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromFacebookId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAccountFromFacebookId" message="tns:IJamming_GetAccountFromFacebookId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAccountFromFacebookIdResponse" message="tns:IJamming_GetAccountFromFacebookId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllGenre" message="tns:IJamming_GetAllGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllGenreResponse" message="tns:IJamming_GetAllGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupGenere">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAllGroupGenere" message="tns:IJamming_GetAllGroupGenere_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAllGroupGenereResponse" message="tns:IJamming_GetAllGroupGenere_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkArtistGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/LinkArtistGroup" message="tns:IJamming_LinkArtistGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/LinkArtistGroupResponse" message="tns:IJamming_LinkArtistGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupNonGenders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetGroupNonGenders" message="tns:IJamming_GetGroupNonGenders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetGroupNonGendersResponse" message="tns:IJamming_GetGroupNonGenders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetArtist" message="tns:IJamming_GetArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetArtistResponse" message="tns:IJamming_GetArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetGenre" message="tns:IJamming_GetGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetGenreResponse" message="tns:IJamming_GetGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllInstrument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/getAllInstrument" message="tns:IJamming_getAllInstrument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/getAllInstrumentResponse" message="tns:IJamming_getAllInstrument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateArtistInsturment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateArtistInsturment" message="tns:IJamming_CreateArtistInsturment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateArtistInsturmentResponse" message="tns:IJamming_CreateArtistInsturment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditArtistInstrument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditArtistInstrument" message="tns:IJamming_EditArtistInstrument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditArtistInstrumentResponse" message="tns:IJamming_EditArtistInstrument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/SignIn" message="tns:IJamming_SignIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/SignInResponse" message="tns:IJamming_SignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAccountLastConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditAccountLastConnection" message="tns:IJamming_EditAccountLastConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditAccountLastConnectionResponse" message="tns:IJamming_EditAccountLastConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetAccount" message="tns:IJamming_GetAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetAccountResponse" message="tns:IJamming_GetAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetArtistGenre" message="tns:IJamming_GetArtistGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetArtistGenreResponse" message="tns:IJamming_GetArtistGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetArtistGroups" message="tns:IJamming_GetArtistGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetArtistGroupsResponse" message="tns:IJamming_GetArtistGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistAlbums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetArtistAlbums" message="tns:IJamming_GetArtistAlbums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetArtistAlbumsResponse" message="tns:IJamming_GetArtistAlbums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstrument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetInstrument" message="tns:IJamming_GetInstrument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetInstrumentResponse" message="tns:IJamming_GetInstrument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistInstruments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/GetArtistInstruments" message="tns:IJamming_GetArtistInstruments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/GetArtistInstrumentsResponse" message="tns:IJamming_GetArtistInstruments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/CreateAProject" message="tns:IJamming_CreateAProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/CreateAProjectResponse" message="tns:IJamming_CreateAProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkProjectArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/LinkProjectArtist" message="tns:IJamming_LinkProjectArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/LinkProjectArtistResponse" message="tns:IJamming_LinkProjectArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProjectArtistInstrument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJamming/EditProjectArtistInstrument" message="tns:IJamming_EditProjectArtistInstrument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJamming/EditProjectArtistInstrumentResponse" message="tns:IJamming_EditProjectArtistInstrument_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IJamming" type="tns:IJamming">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RemoveAProject">
+      <soap:operation soapAction="http://tempuri.org/IJamming/RemoveAProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupMembers">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllGroupMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroupGener">
+      <soap:operation soapAction="http://tempuri.org/IJamming/DeleteGroupGener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAlbum">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAlbum">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupAlbums">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllGroupAlbums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <soap:operation soapAction="http://tempuri.org/IJamming/DeleteAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReActiveAccount">
+      <soap:operation soapAction="http://tempuri.org/IJamming/ReActiveAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountFan">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateAccountFan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFan">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditFan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountArtist">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateAccountArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditArtist">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLocalManager">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateLocalManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLocalManager">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditLocalManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBusinessOwner">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateBusinessOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBusinessOwner">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditBusinessOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBusiness">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBusiness">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBusinessLocal">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateBusinessLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAddress">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAddress">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEvent">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditEvent">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGenre">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditGenre">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInstrumentType">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateInstrumentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInstrument">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateInstrument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditInstrument">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditInstrument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLocation">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSocialNetwork">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateSocialNetwork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserNetwork">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateUserNetwork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRaider">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateRaider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroupComponent">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateGroupComponent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditGroupComponent">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditGroupComponent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequirements">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateRequirements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditRequirements">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditRequirements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTradeItem">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateTradeItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTradeItem">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditTradeItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCurrency">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroupGenre">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateGroupGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditGroupGenre">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditGroupGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroup">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBusiness">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArtist">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCitys">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllCitys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStates">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFacebookAccount">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CheckFacebookAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkFacebookAccount">
+      <soap:operation soapAction="http://tempuri.org/IJamming/LinkFacebookAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromFacebookId">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAccountFromFacebookId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGenre">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupGenere">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAllGroupGenere" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkArtistGroup">
+      <soap:operation soapAction="http://tempuri.org/IJamming/LinkArtistGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupNonGenders">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetGroupNonGenders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtist">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenre">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInstrument">
+      <soap:operation soapAction="http://tempuri.org/IJamming/getAllInstrument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateArtistInsturment">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateArtistInsturment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditArtistInstrument">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditArtistInstrument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="http://tempuri.org/IJamming/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAccountLastConnection">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditAccountLastConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistGenre">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetArtistGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistGroups">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetArtistGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistAlbums">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetArtistAlbums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstrument">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetInstrument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistInstruments">
+      <soap:operation soapAction="http://tempuri.org/IJamming/GetArtistInstruments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAProject">
+      <soap:operation soapAction="http://tempuri.org/IJamming/CreateAProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkProjectArtist">
+      <soap:operation soapAction="http://tempuri.org/IJamming/LinkProjectArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProjectArtistInstrument">
+      <soap:operation soapAction="http://tempuri.org/IJamming/EditProjectArtistInstrument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Jamming">
+    <wsdl:port name="BasicHttpBinding_IJamming" binding="tns:BasicHttpBinding_IJamming">
+      <soap:address location="http://localhost:34052/Jamming.Consulta.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

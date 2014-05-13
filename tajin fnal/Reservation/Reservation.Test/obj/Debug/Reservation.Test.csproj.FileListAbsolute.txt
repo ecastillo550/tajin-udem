@@ -1,0 +1,12 @@
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\Reservation.Test.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\Reservation.Test.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\obj\Debug\Reservation.Test.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\obj\Debug\Reservation.Test.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\obj\Debug\Reservation.Test.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\ReservationModel.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\ResevationService.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\EntityFramework.dll
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\ReservationModel.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\ResevationService.pdb
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\EntityFramework.xml
+C:\Users\Daniel\Documents\Multicapas\Reservation\Reservation.Test\bin\Debug\Reservation.Test.dll.config

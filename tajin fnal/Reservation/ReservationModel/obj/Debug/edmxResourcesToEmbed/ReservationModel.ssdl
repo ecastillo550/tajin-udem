@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReservationAppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ReservationAppModelStoreContainer">
+    <EntitySet Name="Account" EntityType="ReservationAppModel.Store.Account" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Business" EntityType="ReservationAppModel.Store.Business" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Client" EntityType="ReservationAppModel.Store.Client" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Direction" EntityType="ReservationAppModel.Store.Direction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Message" EntityType="ReservationAppModel.Store.Message" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reservation" EntityType="ReservationAppModel.Store.Reservation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Style" EntityType="ReservationAppModel.Store.Style" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="ReservationAppModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Business_Account" Association="ReservationAppModel.Store.FK_Business_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Direction" Association="ReservationAppModel.Store.FK_Business_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Style" Association="ReservationAppModel.Store.FK_Business_Style">
+      <End Role="Style" EntitySet="Style" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Account" Association="ReservationAppModel.Store.FK_Client_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Business" Association="ReservationAppModel.Store.FK_Message_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Client" Association="ReservationAppModel.Store.FK_Message_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Business" Association="ReservationAppModel.Store.FK_Reservation_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Client" Association="ReservationAppModel.Store.FK_Reservation_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="userName" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="userTypeId" Type="int" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Business">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="bussinesName" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="telephone" Type="varchar" MaxLength="15" />
+    <Property Name="description" Type="text" />
+    <Property Name="syleId" Type="int" />
+    <Property Name="numSpaces" Type="int" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="20" />
+    <Property Name="priceRangeId" Type="int" Nullable="false" />
+    <Property Name="directionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="firstName" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="pLastName" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="mLastName" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="telephone" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="mail" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Direction">
+    <Key>
+      <PropertyRef Name="directionId" />
+    </Key>
+    <Property Name="directionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="number" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="street" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="colony" Type="varchar" MaxLength="30" />
+    <Property Name="city" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="postalCod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="messageId" />
+    </Key>
+    <Property Name="messageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bUserId" Type="int" Nullable="false" />
+    <Property Name="messageText" Type="text" Nullable="false" />
+    <Property Name="mTime" Type="time" Nullable="false" />
+    <Property Name="cUserId" Type="int" />
+    <Property Name="mDay" Type="date" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="reservationId" />
+    </Key>
+    <Property Name="reservationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bUserId" Type="int" Nullable="false" />
+    <Property Name="cUserId" Type="int" Nullable="false" />
+    <Property Name="rDay" Type="date" Nullable="false" />
+    <Property Name="rTime" Type="time" Nullable="false" />
+    <Property Name="people" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Style">
+    <Key>
+      <PropertyRef Name="styleId" />
+    </Key>
+    <Property Name="styleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="style" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Business_Account">
+    <End Role="Account" Type="ReservationAppModel.Store.Account" Multiplicity="1" />
+    <End Role="Business" Type="ReservationAppModel.Store.Business" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Direction">
+    <End Role="Direction" Type="ReservationAppModel.Store.Direction" Multiplicity="1" />
+    <End Role="Business" Type="ReservationAppModel.Store.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="directionId" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="directionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Style">
+    <End Role="Style" Type="ReservationAppModel.Store.Style" Multiplicity="0..1" />
+    <End Role="Business" Type="ReservationAppModel.Store.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Style">
+        <PropertyRef Name="styleId" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="syleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Account">
+    <End Role="Account" Type="ReservationAppModel.Store.Account" Multiplicity="1" />
+    <End Role="Client" Type="ReservationAppModel.Store.Client" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Business">
+    <End Role="Business" Type="ReservationAppModel.Store.Business" Multiplicity="1" />
+    <End Role="Message" Type="ReservationAppModel.Store.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="bUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Client">
+    <End Role="Client" Type="ReservationAppModel.Store.Client" Multiplicity="0..1" />
+    <End Role="Message" Type="ReservationAppModel.Store.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="cUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Business">
+    <End Role="Business" Type="ReservationAppModel.Store.Business" Multiplicity="1" />
+    <End Role="Reservation" Type="ReservationAppModel.Store.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="bUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Client">
+    <End Role="Client" Type="ReservationAppModel.Store.Client" Multiplicity="1" />
+    <End Role="Reservation" Type="ReservationAppModel.Store.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="cUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
